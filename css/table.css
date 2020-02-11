@@ -1,0 +1,17 @@
+table, th, td {
+	border: 3px solid;
+	border-collapse: collapse;
+	border-color: black;
+}
+
+th, td {
+	padding: 5px;  
+}
+
+.judul{
+	border: none;
+}
+
+tr:nth-child(even) {
+	background-color: #fbfcf2;
+}
