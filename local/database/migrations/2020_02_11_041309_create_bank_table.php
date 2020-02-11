@@ -17,6 +17,7 @@ class CreateBankTable extends Migration
             $table->bigIncrements('id');
             $table->char('referensi',32);
             $table->string('nama_bank');
+            $table->date('tanggal');
             $table->bigInteger('id_pegawai')->unsigned();
             $table->timestamps();
         });
