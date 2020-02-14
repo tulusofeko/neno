@@ -14,12 +14,21 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::group(['middleware'=>['web']], function() {
 
-Route::get('/', 'HomeController@index')->name('home');
+	Auth::routes();
 	
-Route::get('/home', function () {
-	return redirect()->route('home');
-});
+	Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+	Route::get('register',function(){
+		return redirect('/');
+	});
+
+	Route::get('/', 'NeracaController@index')->name('home');
+		
+	Route::get('/home', function () {
+		return redirect()->route('home');
+	});
 
 	// ROUTE HALAMAN NERACA
 	Route::resource('neraca','NeracaController');
@@ -35,3 +44,4 @@ Route::get('/home', function () {
 	Route::match(['post', 'put'], 'nominatif/rekons', 'NominatifController@rekons');
 
 	Route::resource('pengaturan-akun','PengaturanAkunController');
+});

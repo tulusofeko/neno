@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input; 
+use Illuminate\Support\Facades\Auth;
 
 use App\Nominatif;
 use App\User;
@@ -19,6 +20,10 @@ use Response;
 
 class NominatifController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        // $this->middleware('analis');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -128,7 +133,7 @@ class NominatifController extends Controller
                                 $export_error_data[$i]['referensi'] = hash('md5',$export_error_data[$i]['nama'].$export_error_data[$i]['no_base']);
 
                                 //Diganti
-                                $nama_rekon = "Eko Tulus";
+                                $nama_rekon = Auth::user()->nama;
 
                                 $export_error_data[$i]['rekaman'] = "Rekon by ".$nama_rekon; 
                                 $user_data = Nominatif::all()->toArray();
@@ -204,7 +209,7 @@ class NominatifController extends Controller
     public function store(NominatifRequest $request)
     {
         //Diganti
-        $nama_pegawai = "Eko Tulus";
+        $nama_pegawai = Auth::user()->nama;
 
         $input = $request->all();
         $input['nama'] = strtoupper($request->nama);
@@ -436,7 +441,7 @@ class NominatifController extends Controller
     public function update(NominatifRequest $request, $id)
     {
         //Diganti
-        $nama_pegawai = "Eko Tulus";
+        $nama_pegawai = Auth::user()->nama;
 
         $data= Nominatif::findOrFail($id);
         $input = $request->all();

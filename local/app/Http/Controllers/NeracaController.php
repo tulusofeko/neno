@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\NeracaRequest;
 use App\Bank;
 use App\Aset;
@@ -20,6 +21,11 @@ use Response;
 
 class NeracaController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+        // $this->middleware('analis');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -53,14 +59,14 @@ class NeracaController extends Controller
      */
     public function store(NeracaRequest $request)
     {
-        $id_pegawai = 1;
+        $id_pegawai = Auth::user()->id;
         $input = $request->all();
         $input['nama_bank'] = strtoupper($request->nama_bank);
         $input['tanggal'] = date("Y-m-d", strtotime($input['tanggal']));
         
         $gabung = $input['nama_bank'].$input['tanggal'].$this->generateRandomString(6);
         $input['referensi'] = hash('md5',$gabung);
-        $input['id_pegawai'] = 1;
+        $input['id_pegawai'] = Auth::user()->id;
         $simpan_bank = Bank::create($input);
 
         $id_bank = Bank::where('referensi',$input['referensi'])->value('id');

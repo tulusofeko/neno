@@ -8,7 +8,7 @@
         </div>
         <div class="pull-left info">
           <p>LEVEL AKSES</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Admin</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> {{ Auth::user()->level }}</a>
         </div>
       </div>
       <ul class="sidebar-menu" data-widget="tree">
@@ -19,6 +19,7 @@
             <i class="fa fa-home"></i> <span>DASHBOARD</span>
           </a>
         </li> --}}
+        @if(Auth::check())
         <li class="active">
           <a href="{{ url('neraca') }}">
             <i class="fa fa-balance-scale"></i> <span>NERACA</span>
@@ -29,12 +30,14 @@
             <i class="fa fa-list-ol"></i> <span>NOMINATIF</span>
           </a>
         </li>
+        @endif
+        @if((Auth::check()&&Auth::user()->level=='Superadmin'))
         <li>
           <a href="{{ url('pengaturan-akun') }}">
             <i class="fa fa-user-circle-o"></i> <span>AKUN</span>
           </a>
         </li>
-        {{-- @endif --}}
+        @endif
         
       </ul>
     </section>

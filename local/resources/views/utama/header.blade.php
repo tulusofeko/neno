@@ -17,23 +17,23 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="{{ asset('/arsip/fileMaster/perempuan.png')}}" class="user-image" alt="User Image">
-              <span class="hidden-xs">EKO TULUS</span>
+                <img src="{{ asset('/arsip/fileMaster/laki-laki2.png')}}" class="user-image" alt="User Image">
+              <span class="hidden-xs">{{ Auth::user()->nama }}</span>
             </a>
             <ul class="dropdown-menu animated bounceIn" style="border-radius: 10px;">
               <!-- User image -->
               <li class="user-header" style="border-radius: 10px;">
-                  <img src="{{ asset('/arsip/fileMaster/perempuan.png')}}" class="img-circle" alt="User Image">
+                  <img src="{{ asset('/arsip/fileMaster/laki-laki2.png')}}" class="img-circle" alt="User Image">
                 <p>
-                  EKO TULUS
-                  <small>19920513 201412 1 001</small>
+                  {{ Auth::user()->nama }}
+                  <small>{{ Auth::user()->level }}</small>
                 </p>
               </li>
               <!-- Menu Footer-->
               <li class="user-footer" style="border-radius: 10px;"> 
-                <div class="pull-left">
+                {{-- <div class="pull-left">
                   <a href="#" class="btn-social btn btn-primary btn-sm"><i class="fa fa-id-card" aria-hidden="true"></i> Profil Pegawai</a>
-                </div>
+                </div> --}}
                 <div class="pull-right">
                   <a href="{{ url('logout') }}" class="btn-social btn btn-danger btn-sm"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign out</a>
                 </div>

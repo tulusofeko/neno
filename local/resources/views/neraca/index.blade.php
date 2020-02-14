@@ -53,11 +53,11 @@
                   <i class="fa fa-calculator" aria-hidden="true"></i>
                 </button>
               </a>
-            <a href="{{ url('neraca/'.$neraca->referensi.'/edit') }}">         
+            {{-- <a href="{{ url('neraca/'.$neraca->referensi.'/edit') }}">         
               <button class="edit-modal btn btn-warning btn-sm" data-toggle="tooltip" title="Perbarui Data">
                 <span class="glyphicon glyphicon-edit"></span>
               </button>
-            </a>
+            </a> --}}
             <button class="delete-modal btn btn-danger btn-sm" data-id="{{ $neraca->id }}" data-toggle="tooltip" title="Hapus Data">
               <span class="glyphicon glyphicon-trash"></span>
             </button>

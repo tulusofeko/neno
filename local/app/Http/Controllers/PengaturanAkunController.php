@@ -10,10 +10,10 @@ use Response;
 
 class PengaturanAkunController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('auth');
-    //     $this->middleware('admin');
-    // }
+    public function __construct(){
+        $this->middleware('auth');
+        $this->middleware('superadmin');
+    }
     /**
     * @var array
     */

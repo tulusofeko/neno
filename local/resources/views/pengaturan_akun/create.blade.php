@@ -20,7 +20,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label("password","Password",["class"=>"control-label"]) !!}
-                        <input id="password" type="password" class="form-control{{ $errors->has('password_baru') ? ' is-invalid' : '' }}" name="password" required>
+                        <input id="password" type="password" class="form-control{{ $errors->has('password_baru') ? ' is-invalid' : '' }}" name="password" placeholder="Masukan data ..">
                         <p class="errorPassword text-center alert alert-danger hidden"></p>
                     </div>
                     <div class="form-group">

@@ -505,19 +505,19 @@
 		{!! Form::number("lain_utama",null,['class'=>'form-control','id'=>'lain_utama','autocomplete' => 'off']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d1",null,['class'=>'form-control','id'=>'lain_d1','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("lain_d1",null,['class'=>'form-control','id'=>'lain_d1','autocomplete' => 'off']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k1",null,['class'=>'form-control','id'=>'lain_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d2",null,['class'=>'form-control','id'=>'lain_d2','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("lain_d2",null,['class'=>'form-control','id'=>'lain_d2','autocomplete' => 'off']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k2",null,['class'=>'form-control','id'=>'lain_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d3",null,['class'=>'form-control','id'=>'lain_d3','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("lain_d3",null,['class'=>'form-control','id'=>'lain_d3','autocomplete' => 'off']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k3",null,['class'=>'form-control','id'=>'lain_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
