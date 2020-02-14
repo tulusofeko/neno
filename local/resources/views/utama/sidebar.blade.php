@@ -14,14 +14,24 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header"><b>MENU UTAMA APLIKASI</b></li>
         {{-- @if(Auth::check()) --}}
-        <li class="active">
+        {{-- <li class="active">
           <a href="{{ url('/') }}">
+            <i class="fa fa-home"></i> <span>DASHBOARD</span>
+          </a>
+        </li> --}}
+        <li class="active">
+          <a href="{{ url('neraca') }}">
             <i class="fa fa-balance-scale"></i> <span>NERACA</span>
           </a>
         </li>
         <li>
           <a href="{{ url('nominatif') }}">
-            <i class="fa fa-calculator"></i> <span>NOMINATIF</span>
+            <i class="fa fa-list-ol"></i> <span>NOMINATIF</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ url('pengaturan-akun') }}">
+            <i class="fa fa-user-circle-o"></i> <span>AKUN</span>
           </a>
         </li>
         {{-- @endif --}}

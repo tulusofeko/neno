@@ -31,6 +31,13 @@ class CreateKPMMTable extends Migration
             $table->text('modal_pelengkap_k2')->nullable();
             $table->text('modal_pelengkap_d3')->nullable();
             $table->text('modal_pelengkap_k3')->nullable();
+            $table->text('total_atmr_utama')->nullable();
+            $table->text('total_atmr_d1')->nullable();
+            $table->text('total_atmr_k1')->nullable();
+            $table->text('total_atmr_d2')->nullable();
+            $table->text('total_atmr_k2')->nullable();
+            $table->text('total_atmr_d3')->nullable();
+            $table->text('total_atmr_k3')->nullable();
             $table->text('npf_utama')->nullable();
             $table->text('npf_d1')->nullable();
             $table->text('npf_k1')->nullable();

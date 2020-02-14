@@ -1,0 +1,33 @@
+<div id="addModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <input type="hidden" class="form-control" id="id_edit" disabled>
+                    <div class="form-group">
+                        {!! Form::label("nama_hukdis","Nama Hukdis",["class"=>"control-label"]) !!}
+                        {!! Form::text("nama_hukdis",null,['class'=>'form-control', 'placeholder'=>'Masukan data ..','id'=>'nama_hukdis', 'autofocus']) !!}
+                        <p class="errorTitle text-center alert alert-danger hidden"></p>
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('tingkat_hukdis','Jenis Hukdis :', ['class'=>'control-label']) !!}
+                        {!! Form::select('tingkat_hukdis', array('Ringan' => 'Ringan', 'Sedang' => 'Sedang', 'Berat' => 'Berat'),null, ['class'=>'form-control','style'=>'width:100%','id'=>'tingkat_hukdis', 'placeholder'=>'-- Select data --']) !!}
+                        <p class="errorTingkatHukdis text-center alert alert-danger hidden"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left btn-sm btn btn-social" data-dismiss="modal">
+                    <span class='glyphicon glyphicon-remove'></span> CLOSE
+                </button>
+                <button type="button" class="btn btn-success add btn-sm btn btn-social" data-dismiss="modal">
+                    <span id="" class='glyphicon glyphicon-check'></span> TAMBAH
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

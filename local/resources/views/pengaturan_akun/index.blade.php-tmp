@@ -1,0 +1,237 @@
+@extends('utama.template')
+@section('main')
+ <section class="content-header">
+        <h1>
+            <i class="fa fa-gears"></i> Pangaturan
+            <small>Hukuman Disiplin</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-gears"></i>Pengaturan</a></li>
+            <li class="active">Hukuman Disiplin</li>
+        </ol>
+    </section>
+<section class="content">
+<div class="box box-success">
+  <div class="box-header">
+    <h3 class="box-title"><i class="fa fa-balance-scale text-yellow"></i> Hukuman Disiplin || </h3>
+      <div class="btn-group" data-toggle="tooltip" title="Tambah Data">
+        <button class="add-modal btn btn-social btn-primary btn-sm">
+          <span class="glyphicon glyphicon-plus-sign"></span> <?php echo "TAMBAH DATA"?>
+        </button>
+      </div>
+      <div class="btn-group" data-toggle="tooltip" title="Import Data">
+        <a href="{{ url('rekon') }}">
+          <button class="btn btn-social btn bg-maroon btn-sm">
+            <i class="fa fa-database"></i> <?php echo "REKON DATA DAN REFERENSI"?>
+          </button>
+        </a>
+      </div>
+      <div class="btn-group" data-toggle="tooltip" title="Refresh Data">
+        <a href="{{ url('pengaturan-hukdis') }}">
+          <button class="btn bg-olive btn btn-social btn-lrg ajax btn-sm">
+            <i class="fa fa-spin fa-refresh"></i>&nbsp; <?php echo "REFRESH DATA"?>
+</button>
+        </a>
+      </div>
+  </div>
+  {{-- @if($jumlah_tingkat!=0) --}}
+  <div class="box-body animated bounceInUp">
+    <table id="example1" class="table table-bordered table-striped" >
+      <thead>
+        <tr>
+          <th style="width: 5%">No</th>
+          <th>Nama Hukdis</th>
+          <th style="width: 15%">Jenis Hukdis</th>
+          <th style="width: 20%">Actions</th>
+        </tr>
+        {{ csrf_field() }}
+      </thead>
+      <tbody>
+<?php $i = 0;?>
+@foreach($data_list as $indexKey => $data)
+        <tr class="item{{$data->id}}">
+          <td class="col1" align="center">{{ $indexKey+1 }}</td>
+          <td>{{ $data->nama_hukdis }}</td>
+          @if($data->tingkat_hukdis == "Berat")
+            <td align="center"><span class="label label-danger">{{ $data->tingkat_hukdis }}</span></td>
+          @elseif($data->tingkat_hukdis == "Sedang")
+            <td align="center"><span class="label label-warning">{{ $data->tingkat_hukdis }}</span></td>
+          @elseif($data->tingkat_hukdis == "Ringan")
+            <td align="center"><span class="label label-success">{{ $data->tingkat_hukdis }}</span></td>
+          @endif
+          <td align="center">
+            <button class="show-modal btn bg-purple btn-sm" data-id="{{$data->id}}" data-nama_hukdis="{{$data->nama_hukdis}}" data-tingkat_hukdis="{{$data->tingkat_hukdis}}" data-toggle="tooltip" title="Tampilkan Data">
+              <span class="glyphicon glyphicon-eye-open"></span>
+            </button>
+            <button class="edit-modal btn btn-warning btn-sm" data-id="{{$data->id}}" data-nama_hukdis="{{$data->nama_hukdis}}" data-tingkat_hukdis="{{$data->tingkat_hukdis}}" data-toggle="tooltip" title="Perbarui Data">
+              <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button class="delete-modal btn btn-danger btn-sm" data-id="{{$data->id}}" data-nama_hukdis="{{$data->nama_hukdis}}" data-tingkat_hukdis="{{$data->tingkat_hukdis}}" data-toggle="tooltip" title="Hapus Data">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </td>
+        </tr>
+      @endforeach
+      </tbody>
+      <tfoot>
+        <tr>
+           <th style="width: 5%">No</th>
+          <th>Nama Hukdis</th>
+          <th style="width: 15%">Jenis Hukdis</th>
+          <th style="width: 20%">Actions</th>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  {{-- @else
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><i class="icon fa fa-ban"></i> Perhatian!</h4>
+        Tidak Ada Data Jabatan.
+  </div>
+  @endif --}}
+</div>
+@include('pengaturan_hukdis.create')
+@include('pengaturan_hukdis.edit')
+@include('pengaturan_hukdis.show')
+@include('utama.hapus')
+</section>
+@endsection
+
+@section('js')
+<script>
+  $(window).load(function(){
+    $('#example1').removeAttr('style');
+  })
+</script>
+<script type="text/javascript">
+  // Add a post
+  $(document).on('click', '.add-modal', function() {
+    $('#nama_hukdis').val('');
+    $('#tingkat_hukdis').val('');
+    $('.modal-title').text('Tambah Data');
+    $('#addModal').modal('show');
+  });
+
+  $('.modal-footer').on('click', '.add', function() {
+    $.ajax({
+      type: 'POST',
+      url: 'pengaturan-hukdis',
+      data: {
+        '_token': $('input[name=_token]').val(),
+        'nama_hukdis': $('#nama_hukdis').val(),
+        'tingkat_hukdis': $('#tingkat_hukdis').val(),
+      },
+      success: function(data) {
+        $('.errorTitle').addClass('hidden');
+        if ((data.errors)) {
+          setTimeout(function () {
+          $('#addModal').modal('show');
+          toastr.error('Validation error!', 'Error Alert', {timeOut: 5000});
+          }, 500);
+
+          if (data.errors.nama_hukdis) {
+            $('.errorTitle').removeClass('hidden');
+            $('.errorTitle').text(data.errors.nama_hukdis);
+          }
+          if (data.errors.tingkat_hukdis) {
+            $('.errorTingkatHukdis').removeClass('hidden');
+            $('.errorTingkatHukdis').text(data.errors.tingkat_hukdis);
+          }
+        } else {
+          toastr.success('Successfully added Data!', 'Success Alert', {timeOut: 5000});
+          $('#example1').prepend("<tr class='item" + data.id + "'><td class='col1' align='center'>" + data.id + "</td><td>" + data.nama_hukdis + "</td><td>" + data.tingkat_hukdis + "</td><td align='center'><button class='show-modal btn bg-purple btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "' data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Tampilkan Data'><span class='glyphicon glyphicon-eye-open'></span></button> <button class='edit-modal btn btn-warning btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "'  data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Perbarui Data'><span class='glyphicon glyphicon-edit'></span></button> <button class='delete-modal btn btn-danger  btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "' data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Hapus Data'><span class='glyphicon glyphicon-trash'></span></button></td></tr>");
+
+          $('.col1').each(function (index) {
+            $(this).html(index+1);
+          });
+        }
+      },
+    });
+  });
+
+  // Edit a post
+  $(document).on('click', '.edit-modal', function() {
+    $('.modal-title').text('Edit Data');
+    $('#id_edit').val($(this).data('id'));
+    $('#nama_hukdis_edit').val($(this).data('nama_hukdis'));
+    $('#tingkat_hukdis_edit').val($(this).data('tingkat_hukdis'));
+    id = $('#id_edit').val();
+    $('#editModal').modal('show');
+  });
+  $('.modal-footer').on('click', '.edit', function() {
+    $.ajax({
+      type: 'PUT',
+      url: 'pengaturan-hukdis/' + id,
+      data: {
+        '_token': $('input[name=_token]').val(),
+        'id': $("#id_edit").val(),
+        'nama_hukdis': $('#nama_hukdis_edit').val(),
+        'tingkat_hukdis': $('#tingkat_hukdis_edit').val(),
+      },
+      success: function(data) {
+        $('.errorTitle').addClass('hidden');
+
+        if ((data.errors)) {
+          setTimeout(function () {
+            $('#editModal').modal('show');
+            toastr.error('Validation error!', 'Error Alert', {timeOut: 5000});
+          }, 500);
+
+          if (data.errors.nama_hukdis) {
+            $('.errorTitle').removeClass('hidden');
+            $('.errorTitle').text(data.errors.nama_hukdis);
+          }
+
+          if (data.errors.tingkat_hukdis) {
+            $('.errorTingkatHukdis').removeClass('hidden');
+            $('.errorTingkatHukdis').text(data.errors.tingkat_hukdis);
+          }
+
+        } else {
+          toastr.success('Successfully updated Post!', 'Success Alert', {timeOut: 5000});
+            $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td class='col1' align='center'>" + data.id + "</td><td>" + data.nama_hukdis + "</td><td>" + data.tingkat_hukdis + "</td><td align='center'><button class='show-modal btn bg-purple btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "' data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Tampilkan Data'><span class='glyphicon glyphicon-eye-open'></span></button> <button class='edit-modal btn btn-warning btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "'  data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Perbarui Data'><span class='glyphicon glyphicon-edit'></span></button> <button class='delete-modal btn btn-danger  btn-sm' data-id='" + data.id + "' data-nama_hukdis='" + data.nama_hukdis + "' data-tingkat_hukdis='" + data.tingkat_hukdis + "' data-toggle='tooltip' title='Hapus Data'><span class='glyphicon glyphicon-trash'></span></button></td></tr>");
+
+            $('.col1').each(function (index) {
+              $(this).html(index+1);
+            });
+        }
+      }
+    });
+  });
+
+  // Delete a post
+  $(document).on('click', '.delete-modal', function() {
+    $('.modal-title').text('Hapus Data');
+    $('#id_delete').val($(this).data('id'));
+    $('#deleteModal').modal('show');
+    id = $('#id_delete').val();
+  });
+  $('.modal-footer').on('click', '.delete', function() {
+    $.ajax({
+      type: 'DELETE',
+      url: 'pengaturan-hukdis/' + id,
+      data: {
+        '_token': $('input[name=_token]').val(),
+      },
+
+      success: function(data) {
+        toastr.success('Successfully deleted Post!', 'Success Alert', {timeOut: 5000});
+        location.reload();
+      }
+    });
+  });
+
+  // Show a post
+  $(document).on('click', '.show-modal', function() {
+    $('.modal-title').text('Tampilkan');
+    $('#nama_hukdis_show').val($(this).data('nama_hukdis'));
+    $("#tingkat_hukdis_show").val($(this).data('tingkat_hukdis'));
+    $('#showModal').modal('show');
+  });
+</script>
+
+@endsection
+@section('footer')
+    @include('utama.footer')
+@endsection
