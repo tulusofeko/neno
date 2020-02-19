@@ -13,6 +13,7 @@ use App\Liabilitas;
 use App\LabaRugi;
 use App\KPMM;
 use App\User;
+use App\Nominatif;
 
 use PDF;
 use Carbon\Carbon;
@@ -87,6 +88,300 @@ class NeracaController extends Controller
         return redirect('neraca/'.$input['referensi'])->with($notification);
     }
 
+    public function ckpnAsets0(){
+        $nominatif_list = Nominatif::orderBy('nama', 'asc')->get();
+        $jumlah_data = $nominatif_list->count();
+            if ($jumlah_data != NULL) {
+                    $jumlah_ppa_kb[0] = 0;
+                    $jumlah_ppa_kb_1_pilar[0] = 0;
+                    $jumlah_ppa_kb_3_pilar[0] = 0;
+
+                    foreach ($nominatif_list as $key => $nominatif) {
+                        if (($nominatif->outstanding - $nominatif->aydd_auditor) > 0) {
+                            $os_aydd[$key] = $nominatif->outstanding - $nominatif->aydd_auditor;
+                        }else{
+                            $os_aydd[$key] = 0;
+                        }
+
+                        switch ($nominatif->kol_lsmk) {
+                            case "1":
+                                $tarif_ppa[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa[$key] = 100;
+                        }
+
+                        $ppa_wb[$key] = round(($os_aydd[$key] * $tarif_ppa[$key])/100);
+
+                        $ppa_kb[$key] = $ppa_wb[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb[$key+1] = $jumlah_ppa_kb[$key] + $ppa_kb[$key]; 
+
+                        switch ($nominatif->kol_1_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_1_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_1_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_1_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_1_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_1_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb2[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_1_pilar[$key])/100);
+
+                        $ppa_kb_1_pilar[$key] = $ppa_wb2[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_1_pilar[$key+1] = $jumlah_ppa_kb_1_pilar[$key] + $ppa_kb_1_pilar[$key];
+
+                        switch ($nominatif->kol_3_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_3_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_3_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_3_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_3_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_3_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb3[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_3_pilar[$key])/100);
+
+                        $ppa_kb_3_pilar[$key] = $ppa_wb3[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_3_pilar[$key+1] = $jumlah_ppa_kb_3_pilar[$key] + $ppa_kb_3_pilar[$key];
+                    }     
+                    $jumlah_outstanding = Nominatif::sum('outstanding');
+                    $jumlah_ppap_tb = Nominatif::sum('ppap_tb');
+                    $jumlah_aydd_auditor = Nominatif::sum('aydd_auditor'); 
+
+                    $jumlah_ppa_kb1 = $jumlah_ppa_kb[$key+1];
+                    $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
+                    $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
+
+                    return $jumlah_ppa_kb1/1000000;
+            }else{
+                return 0;
+            }
+    }
+
+    public function ckpnAsets1(){
+        $nominatif_list = Nominatif::orderBy('nama', 'asc')->get();
+        $jumlah_data = $nominatif_list->count();
+            if ($jumlah_data != NULL) {
+                    $jumlah_ppa_kb[0] = 0;
+                    $jumlah_ppa_kb_1_pilar[0] = 0;
+                    $jumlah_ppa_kb_3_pilar[0] = 0;
+
+                    foreach ($nominatif_list as $key => $nominatif) {
+                        if (($nominatif->outstanding - $nominatif->aydd_auditor) > 0) {
+                            $os_aydd[$key] = $nominatif->outstanding - $nominatif->aydd_auditor;
+                        }else{
+                            $os_aydd[$key] = 0;
+                        }
+
+                        switch ($nominatif->kol_lsmk) {
+                            case "1":
+                                $tarif_ppa[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa[$key] = 100;
+                        }
+
+                        $ppa_wb[$key] = round(($os_aydd[$key] * $tarif_ppa[$key])/100);
+
+                        $ppa_kb[$key] = $ppa_wb[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb[$key+1] = $jumlah_ppa_kb[$key] + $ppa_kb[$key]; 
+
+                        switch ($nominatif->kol_1_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_1_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_1_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_1_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_1_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_1_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb2[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_1_pilar[$key])/100);
+
+                        $ppa_kb_1_pilar[$key] = $ppa_wb2[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_1_pilar[$key+1] = $jumlah_ppa_kb_1_pilar[$key] + $ppa_kb_1_pilar[$key];
+
+                        switch ($nominatif->kol_3_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_3_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_3_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_3_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_3_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_3_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb3[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_3_pilar[$key])/100);
+
+                        $ppa_kb_3_pilar[$key] = $ppa_wb3[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_3_pilar[$key+1] = $jumlah_ppa_kb_3_pilar[$key] + $ppa_kb_3_pilar[$key];
+                    }     
+                    $jumlah_outstanding = Nominatif::sum('outstanding');
+                    $jumlah_ppap_tb = Nominatif::sum('ppap_tb');
+                    $jumlah_aydd_auditor = Nominatif::sum('aydd_auditor'); 
+
+                    $jumlah_ppa_kb1 = $jumlah_ppa_kb[$key+1];
+                    $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
+                    $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
+
+                    return $jumlah_ppa_kb2/1000000;
+            }else{
+                return 0;
+            }
+    }
+
+    public function ckpnAsets3(){
+        $nominatif_list = Nominatif::orderBy('nama', 'asc')->get();
+        $jumlah_data = $nominatif_list->count();
+            if ($jumlah_data != NULL) {
+                    $jumlah_ppa_kb[0] = 0;
+                    $jumlah_ppa_kb_1_pilar[0] = 0;
+                    $jumlah_ppa_kb_3_pilar[0] = 0;
+
+                    foreach ($nominatif_list as $key => $nominatif) {
+                        if (($nominatif->outstanding - $nominatif->aydd_auditor) > 0) {
+                            $os_aydd[$key] = $nominatif->outstanding - $nominatif->aydd_auditor;
+                        }else{
+                            $os_aydd[$key] = 0;
+                        }
+
+                        switch ($nominatif->kol_lsmk) {
+                            case "1":
+                                $tarif_ppa[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa[$key] = 100;
+                        }
+
+                        $ppa_wb[$key] = round(($os_aydd[$key] * $tarif_ppa[$key])/100);
+
+                        $ppa_kb[$key] = $ppa_wb[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb[$key+1] = $jumlah_ppa_kb[$key] + $ppa_kb[$key]; 
+
+                        switch ($nominatif->kol_1_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_1_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_1_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_1_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_1_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_1_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb2[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_1_pilar[$key])/100);
+
+                        $ppa_kb_1_pilar[$key] = $ppa_wb2[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_1_pilar[$key+1] = $jumlah_ppa_kb_1_pilar[$key] + $ppa_kb_1_pilar[$key];
+
+                        switch ($nominatif->kol_3_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_3_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_3_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_3_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_3_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_3_pilar[$key] = 100;
+                        }
+
+                        $ppa_wb3[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_3_pilar[$key])/100);
+
+                        $ppa_kb_3_pilar[$key] = $ppa_wb3[$key] - $nominatif->ppap_tb;
+
+                        $jumlah_ppa_kb_3_pilar[$key+1] = $jumlah_ppa_kb_3_pilar[$key] + $ppa_kb_3_pilar[$key];
+                    }     
+                    $jumlah_outstanding = Nominatif::sum('outstanding');
+                    $jumlah_ppap_tb = Nominatif::sum('ppap_tb');
+                    $jumlah_aydd_auditor = Nominatif::sum('aydd_auditor'); 
+
+                    $jumlah_ppa_kb1 = $jumlah_ppa_kb[$key+1];
+                    $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
+                    $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
+
+                    return $jumlah_ppa_kb3/1000000;
+            }else{
+                return 0;
+            }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -143,6 +438,9 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
+        $aset->ckpnp_k1 = round($this->ckpnAsets0());
+        $aset->ckpnp_k3 = round($this->ckpnAsets1());
+        $aset->ckpnp_k2 = round($this->ckpnAsets3());
         $total1_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d1 - $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d2 - $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d3 - $aset->ckpnp_k3;
@@ -539,6 +837,9 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
+        $aset->ckpnp_k1 = round($this->ckpnAsets0());
+        $aset->ckpnp_k3 = round($this->ckpnAsets1());
+        $aset->ckpnp_k2 = round($this->ckpnAsets3());
         $total1_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d1 - $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d2 - $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d3 - $aset->ckpnp_k3;

@@ -148,13 +148,13 @@
         <td>CKPN Aset Produktif</td>
         <td align="right">{{ $aset->ckpnp_utama != NULL ? "Rp " . number_format($aset->ckpnp_utama, 2, ",", ".") : ' ' }}</td>
         <td align="right">{{ $aset->ckpnp_d1 != NULL ? "Rp " . number_format($aset->ckpnp_d1, 2, ",", ".") : ' ' }}</td>
-        <td align="right">{{ $aset->ckpnp_k1 != NULL ? "Rp " . number_format($aset->ckpnp_k1, 2, ",", ".") : ' ' }}</td>
+        <td align="right">{{ $aset->ckpnp_k1 != NULL ? "Rp " . number_format($aset->ckpnp_k1, 2, ",", ".") : 'Rp 0,00' }}</td>
         <td align="right">{{ $total1_ckpnp != NULL ? "Rp " . number_format($total1_ckpnp, 2, ",", ".") : ' ' }}</td>
         <td align="right">{{ $aset->ckpnp_d2 != NULL ? "Rp " . number_format($aset->ckpnp_d2, 2, ",", ".") : ' ' }}</td>
-        <td align="right">{{ $aset->ckpnp_k2 != NULL ? "Rp " . number_format($aset->ckpnp_k2, 2, ",", ".") : ' ' }}</td>
+        <td align="right">{{ $aset->ckpnp_k2 != NULL ? "Rp " . number_format($aset->ckpnp_k2, 2, ",", ".") : 'Rp 0,00' }}</td>
         <td align="right">{{ $total2_ckpnp != NULL ? "Rp " . number_format($total2_ckpnp, 2, ",", ".") : ' ' }}</td>
         <td align="right">{{ $aset->ckpnp_d3 != NULL ? "Rp " . number_format($aset->ckpnp_d3, 2, ",", ".") : ' ' }}</td>
-        <td align="right">{{ $aset->ckpnp_k3 != NULL ? "Rp " . number_format($aset->ckpnp_k3, 2, ",", ".") : ' ' }}</td>
+        <td align="right">{{ $aset->ckpnp_k3 != NULL ? "Rp " . number_format($aset->ckpnp_k3, 2, ",", ".") : 'Rp 0,00' }}</td>
         <td align="right">{{ $total3_ckpnp != NULL ? "Rp " . number_format($total3_ckpnp, 2, ",", ".") : ' ' }}</td>
       </tr>
       <tr>

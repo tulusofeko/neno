@@ -317,98 +317,100 @@ class NominatifController extends Controller
             $excel->sheet('DATA', function($sheet) {
                 $nominatif_list = Nominatif::orderBy('nama', 'asc')->get();
                 $jumlah_data = $nominatif_list->count();
-                $jumlah_ppa_kb[0] = 0;
-                $jumlah_ppa_kb_1_pilar[0] = 0;
-                $jumlah_ppa_kb_3_pilar[0] = 0;
+                if ($jumlah_data != NULL) {
+                    $jumlah_ppa_kb[0] = 0;
+                    $jumlah_ppa_kb_1_pilar[0] = 0;
+                    $jumlah_ppa_kb_3_pilar[0] = 0;
 
-                foreach ($nominatif_list as $key => $nominatif) {
-                    if (($nominatif->outstanding - $nominatif->aydd_auditor) > 0) {
-                        $os_aydd[$key] = $nominatif->outstanding - $nominatif->aydd_auditor;
-                    }else{
-                        $os_aydd[$key] = 0;
-                    }
+                    foreach ($nominatif_list as $key => $nominatif) {
+                        if (($nominatif->outstanding - $nominatif->aydd_auditor) > 0) {
+                            $os_aydd[$key] = $nominatif->outstanding - $nominatif->aydd_auditor;
+                        }else{
+                            $os_aydd[$key] = 0;
+                        }
 
-                    switch ($nominatif->kol_lsmk) {
-                        case "1":
-                            $tarif_ppa[$key] = 1;
-                            break;
-                        case "2":
-                            $tarif_ppa[$key] = 2;
-                            break;
-                        case "3":
-                            $tarif_ppa[$key] = 15;
-                            break;
-                        case "4":
-                            $tarif_ppa[$key] = 50;
-                            break;
-                        default:
-                            $tarif_ppa[$key] = 100;
-                    }
+                        switch ($nominatif->kol_lsmk) {
+                            case "1":
+                                $tarif_ppa[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa[$key] = 100;
+                        }
 
-                    $ppa_wb[$key] = round(($os_aydd[$key] * $tarif_ppa[$key])/100);
+                        $ppa_wb[$key] = round(($os_aydd[$key] * $tarif_ppa[$key])/100);
 
-                    $ppa_kb[$key] = $ppa_wb[$key] - $nominatif->ppap_tb;
+                        $ppa_kb[$key] = $ppa_wb[$key] - $nominatif->ppap_tb;
 
-                    $jumlah_ppa_kb[$key+1] = $jumlah_ppa_kb[$key] + $ppa_kb[$key]; 
+                        $jumlah_ppa_kb[$key+1] = $jumlah_ppa_kb[$key] + $ppa_kb[$key]; 
 
-                    switch ($nominatif->kol_1_pilar) {
-                        case "1":
-                            $tarif_ppa_kol_1_pilar[$key] = 1;
-                            break;
-                        case "2":
-                            $tarif_ppa_kol_1_pilar[$key] = 2;
-                            break;
-                        case "3":
-                            $tarif_ppa_kol_1_pilar[$key] = 15;
-                            break;
-                        case "4":
-                            $tarif_ppa_kol_1_pilar[$key] = 50;
-                            break;
-                        default:
-                            $tarif_ppa_kol_1_pilar[$key] = 100;
-                    }
+                        switch ($nominatif->kol_1_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_1_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_1_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_1_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_1_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_1_pilar[$key] = 100;
+                        }
 
-                    $ppa_wb2[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_1_pilar[$key])/100);
+                        $ppa_wb2[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_1_pilar[$key])/100);
 
-                    $ppa_kb_1_pilar[$key] = $ppa_wb2[$key] - $nominatif->ppap_tb;
+                        $ppa_kb_1_pilar[$key] = $ppa_wb2[$key] - $nominatif->ppap_tb;
 
-                    $jumlah_ppa_kb_1_pilar[$key+1] = $jumlah_ppa_kb_1_pilar[$key] + $ppa_kb_1_pilar[$key];
+                        $jumlah_ppa_kb_1_pilar[$key+1] = $jumlah_ppa_kb_1_pilar[$key] + $ppa_kb_1_pilar[$key];
 
-                    switch ($nominatif->kol_3_pilar) {
-                        case "1":
-                            $tarif_ppa_kol_3_pilar[$key] = 1;
-                            break;
-                        case "2":
-                            $tarif_ppa_kol_3_pilar[$key] = 2;
-                            break;
-                        case "3":
-                            $tarif_ppa_kol_3_pilar[$key] = 15;
-                            break;
-                        case "4":
-                            $tarif_ppa_kol_3_pilar[$key] = 50;
-                            break;
-                        default:
-                            $tarif_ppa_kol_3_pilar[$key] = 100;
-                    }
+                        switch ($nominatif->kol_3_pilar) {
+                            case "1":
+                                $tarif_ppa_kol_3_pilar[$key] = 1;
+                                break;
+                            case "2":
+                                $tarif_ppa_kol_3_pilar[$key] = 2;
+                                break;
+                            case "3":
+                                $tarif_ppa_kol_3_pilar[$key] = 15;
+                                break;
+                            case "4":
+                                $tarif_ppa_kol_3_pilar[$key] = 50;
+                                break;
+                            default:
+                                $tarif_ppa_kol_3_pilar[$key] = 100;
+                        }
 
-                    $ppa_wb3[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_3_pilar[$key])/100);
+                        $ppa_wb3[$key] = round(($os_aydd[$key] * $tarif_ppa_kol_3_pilar[$key])/100);
 
-                    $ppa_kb_3_pilar[$key] = $ppa_wb3[$key] - $nominatif->ppap_tb;
+                        $ppa_kb_3_pilar[$key] = $ppa_wb3[$key] - $nominatif->ppap_tb;
 
-                    $jumlah_ppa_kb_3_pilar[$key+1] = $jumlah_ppa_kb_3_pilar[$key] + $ppa_kb_3_pilar[$key];
-                }     
-                $jumlah_outstanding = Nominatif::sum('outstanding');
-                $jumlah_ppap_tb = Nominatif::sum('ppap_tb');
-                $jumlah_aydd_auditor = Nominatif::sum('aydd_auditor'); 
+                        $jumlah_ppa_kb_3_pilar[$key+1] = $jumlah_ppa_kb_3_pilar[$key] + $ppa_kb_3_pilar[$key];
+                    }     
+                    $jumlah_outstanding = Nominatif::sum('outstanding');
+                    $jumlah_ppap_tb = Nominatif::sum('ppap_tb');
+                    $jumlah_aydd_auditor = Nominatif::sum('aydd_auditor'); 
 
-                $jumlah_ppa_kb1 = $jumlah_ppa_kb[$key+1];
-                $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
-                $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];       
+                    $jumlah_ppa_kb1 = $jumlah_ppa_kb[$key+1];
+                    $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
+                    $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
+                }       
 
                 $sheet->mergeCells('A1:V1');
                 $sheet->setFontFamily('Arial');
 
-                $sheet->loadView('nominatif.template_export',compact('nominatif_list','os_aydd','tarif_ppa','ppa_wb','ppa_kb','tarif_ppa_kol_1_pilar','ppa_wb2','ppa_kb_1_pilar','ppa_wb3','ppa_kb_3_pilar','tarif_ppa_kol_3_pilar','jumlah_outstanding','jumlah_ppap_tb','jumlah_aydd_auditor','jumlah_ppa_kb1','jumlah_ppa_kb2','jumlah_ppa_kb3'));
+                $sheet->loadView('nominatif.template_export',compact('nominatif_list','os_aydd','tarif_ppa','ppa_wb','ppa_kb','tarif_ppa_kol_1_pilar','ppa_wb2','ppa_kb_1_pilar','ppa_wb3','ppa_kb_3_pilar','tarif_ppa_kol_3_pilar','jumlah_outstanding','jumlah_ppap_tb','jumlah_aydd_auditor','jumlah_ppa_kb1','jumlah_ppa_kb2','jumlah_ppa_kb3','jumlah_data'));
             });
 
             $lastrow= $excel->getActiveSheet()->getHighestRow();    

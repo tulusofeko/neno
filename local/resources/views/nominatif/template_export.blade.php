@@ -34,6 +34,7 @@
                 <th align="center" width="30">PPA KB KOL LSMK</th>
             </tr>
         </thead>
+        @if($jumlah_data!=NULL)
         <tbody>
             @foreach($nominatif_list as $key => $nominatif)
             <tr>
@@ -78,15 +79,22 @@
                 <td align="right"></td>
                 <td align="center"></td>
                 <td align="right"></td>
-                <td align="right"></td>
+                <td align="right">{{ $jumlah_ppa_kb1 != NULL ? "Rp " . number_format($jumlah_ppa_kb1, 2, ",", ".") : '-' }}</td>
                 <td align="center"></td>
                 <td align="right"></td>
-                <td align="right">{{ $jumlah_ppa_kb1 != NULL ? "Rp " . number_format($jumlah_ppa_kb1, 2, ",", ".") : '-' }}</td>
+                <td align="right">{{ $jumlah_ppa_kb2 != NULL ? "Rp " . number_format($jumlah_ppa_kb2, 2, ",", ".") : '-' }}</td>
                 <td align="center"></td>
                 <td align="right"></td>
                 <td align="right">{{ $jumlah_ppa_kb3 != NULL ? "Rp " . number_format($jumlah_ppa_kb3, 2, ",", ".") : '-' }}</td>
             </tr>
         </tbody>
+        @else
+        <tbody>
+            <tr>
+                <td colspan="23" align="center">Tidak Ada Data</td>
+            </tr>
+        </tbody>
+        @endif
     </table>
 </body>
 </html>
