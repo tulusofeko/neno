@@ -180,7 +180,7 @@ class NeracaController extends Controller
                     $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
                     $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
 
-                    return $jumlah_ppa_kb1/1000000;
+                    return ($jumlah_ppa_kb1/1000000)*-1;
             }else{
                 return 0;
             }
@@ -278,7 +278,7 @@ class NeracaController extends Controller
                     $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
                     $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
 
-                    return $jumlah_ppa_kb2/1000000;
+                    return ($jumlah_ppa_kb2/1000000)*-1;
             }else{
                 return 0;
             }
@@ -376,7 +376,7 @@ class NeracaController extends Controller
                     $jumlah_ppa_kb2 = $jumlah_ppa_kb_1_pilar[$key+1];
                     $jumlah_ppa_kb3 = $jumlah_ppa_kb_3_pilar[$key+1];
 
-                    return $jumlah_ppa_kb3/1000000;
+                    return ($jumlah_ppa_kb3/1000000)*-1;
             }else{
                 return 0;
             }
@@ -441,9 +441,9 @@ class NeracaController extends Controller
         $aset->ckpnp_k1 = round($this->ckpnAsets0());
         $aset->ckpnp_k3 = round($this->ckpnAsets1());
         $aset->ckpnp_k2 = round($this->ckpnAsets3());
-        $total1_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d1 - $aset->ckpnp_k1;
-        $total2_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d2 - $aset->ckpnp_k2;
-        $total3_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d3 - $aset->ckpnp_k3;
+        $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
+        $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
+        $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
         $total1_astet = $aset->astet_utama + $aset->astet_d1 - $aset->astet_k1;
         $total2_astet = $aset->astet_utama + $aset->astet_d2 - $aset->astet_k2;
         $total3_astet = $aset->astet_utama + $aset->astet_d3 - $aset->astet_k3;
@@ -617,7 +617,7 @@ class NeracaController extends Controller
         $total2_laba_berjalan = $laba_berjalan_utama - $laba_berjalan_d2 + $equitas->laba_sebelum_k2;
         $total3_laba_berjalan = $laba_berjalan_utama - $laba_berjalan_d3 + $equitas->laba_sebelum_k3;
 
-        $total_equitas = $equitas->modal_disetor_utama + $equitas->modal_pinjaman_utama + $equitas->perkiraan_utama + $equitas->selisih_utama + $equitas->cadangan_utama + $equitas->laba_sebelum_utama + $equitas->laba_berjalan_utama;
+        $total_equitas = $equitas->modal_disetor_utama + $equitas->modal_pinjaman_utama + $equitas->perkiraan_utama + $equitas->selisih_utama + $equitas->cadangan_utama + $equitas->laba_sebelum_utama + $laba_berjalan_utama;
         $total_equitas1 = $total1_modal_disetor + $total1_modal_pinjaman + $total1_perkiraan + $total1_selisih + $total1_cadangan + $total1_laba_sebelum + $total1_laba_berjalan;
         $total_equitas2 = $total2_modal_disetor + $total2_modal_pinjaman + $total2_perkiraan + $total2_selisih + $total2_cadangan + $total2_laba_sebelum + $total2_laba_berjalan;
         $total_equitas3 = $total3_modal_disetor + $total3_modal_pinjaman + $total3_perkiraan + $total3_selisih + $total3_cadangan + $total3_laba_sebelum + $total3_laba_berjalan;
@@ -661,9 +661,9 @@ class NeracaController extends Controller
             $total_modal_3 = 0;
         }
 
-        $total_atmr_k1 = ($aset->ckpnl_k1 + $ckpnl_k1)*-1;
-        $total_atmr_k2 = ($aset->ckpnl_k2 + $ckpnl_k2)*-1;
-        $total_atmr_k3 = ($aset->ckpnl_k3 + $ckpnl_k3)*-1;
+        $total_atmr_k1 = ($aset->ckpnp_k1 + $ckpnl_k1)*-1;
+        $total_atmr_k2 = ($aset->ckpnp_k2 + $ckpnl_k2)*-1;
+        $total_atmr_k3 = ($aset->ckpnp_k3 + $ckpnl_k3)*-1;
         $total1_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d1 - $total_atmr_k1;
         $total2_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d2 - $total_atmr_k2;
         $total3_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d3 - $total_atmr_k3;
@@ -676,73 +676,73 @@ class NeracaController extends Controller
         $npf_d3 = $aset->kolektibilitas3_d3 + $aset->kolektibilitas4_d3 + $aset->kolektibilitas5_d3;
         $total3_npf = $total3_kolektibilitas3 + $total3_kolektibilitas4 + $total3_kolektibilitas5;
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 14) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 14) {
             $car_14_1 = (14 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_14_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 14) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 14) {
             $car_14_2 = (14 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_14_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 14) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 14) {
             $car_14_3 = (14 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_14_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 12) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 12) {
             $car_12_1 = (12 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_12_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 12) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 12) {
             $car_12_2 = (12 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_12_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 12) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 12) {
             $car_12_3 = (12 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_12_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 8) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 8) {
             $car_8_1 = (8 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_8_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 8) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 8) {
             $car_8_2 = (8 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_8_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 8) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 8) {
             $car_8_3 = (8 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_8_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 4.1) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 4.1) {
             $car_41_1 = (4.1 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_41_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 4.1) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 4.1) {
             $car_41_2 = (4.1 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_41_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 4.1) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 4.1) {
             $car_41_3 = (4.1 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_41_3 = 0;
@@ -840,9 +840,9 @@ class NeracaController extends Controller
         $aset->ckpnp_k1 = round($this->ckpnAsets0());
         $aset->ckpnp_k3 = round($this->ckpnAsets1());
         $aset->ckpnp_k2 = round($this->ckpnAsets3());
-        $total1_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d1 - $aset->ckpnp_k1;
-        $total2_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d2 - $aset->ckpnp_k2;
-        $total3_ckpnp = $aset->ckpnp_utama + $aset->ckpnp_d3 - $aset->ckpnp_k3;
+        $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
+        $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
+        $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
         $total1_astet = $aset->astet_utama + $aset->astet_d1 - $aset->astet_k1;
         $total2_astet = $aset->astet_utama + $aset->astet_d2 - $aset->astet_k2;
         $total3_astet = $aset->astet_utama + $aset->astet_d3 - $aset->astet_k3;
@@ -1016,7 +1016,7 @@ class NeracaController extends Controller
         $total2_laba_berjalan = $laba_berjalan_utama - $laba_berjalan_d2 + $equitas->laba_sebelum_k2;
         $total3_laba_berjalan = $laba_berjalan_utama - $laba_berjalan_d3 + $equitas->laba_sebelum_k3;
 
-        $total_equitas = $equitas->modal_disetor_utama + $equitas->modal_pinjaman_utama + $equitas->perkiraan_utama + $equitas->selisih_utama + $equitas->cadangan_utama + $equitas->laba_sebelum_utama + $equitas->laba_berjalan_utama;
+        $total_equitas = $equitas->modal_disetor_utama + $equitas->modal_pinjaman_utama + $equitas->perkiraan_utama + $equitas->selisih_utama + $equitas->cadangan_utama + $equitas->laba_sebelum_utama + $laba_berjalan_utama;
         $total_equitas1 = $total1_modal_disetor + $total1_modal_pinjaman + $total1_perkiraan + $total1_selisih + $total1_cadangan + $total1_laba_sebelum + $total1_laba_berjalan;
         $total_equitas2 = $total2_modal_disetor + $total2_modal_pinjaman + $total2_perkiraan + $total2_selisih + $total2_cadangan + $total2_laba_sebelum + $total2_laba_berjalan;
         $total_equitas3 = $total3_modal_disetor + $total3_modal_pinjaman + $total3_perkiraan + $total3_selisih + $total3_cadangan + $total3_laba_sebelum + $total3_laba_berjalan;
@@ -1060,9 +1060,9 @@ class NeracaController extends Controller
             $total_modal_3 = 0;
         }
 
-        $total_atmr_k1 = ($aset->ckpnl_k1 + $ckpnl_k1)*-1;
-        $total_atmr_k2 = ($aset->ckpnl_k2 + $ckpnl_k2)*-1;
-        $total_atmr_k3 = ($aset->ckpnl_k3 + $ckpnl_k3)*-1;
+        $total_atmr_k1 = ($aset->ckpnp_k1 + $ckpnl_k1)*-1;
+        $total_atmr_k2 = ($aset->ckpnp_k2 + $ckpnl_k2)*-1;
+        $total_atmr_k3 = ($aset->ckpnp_k3 + $ckpnl_k3)*-1;
         $total1_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d1 - $total_atmr_k1;
         $total2_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d2 - $total_atmr_k2;
         $total3_total_atmr = $kpmm->total_atmr_utama + $kpmm->total_atmr_d3 - $total_atmr_k3;
@@ -1075,73 +1075,73 @@ class NeracaController extends Controller
         $npf_d3 = $aset->kolektibilitas3_d3 + $aset->kolektibilitas4_d3 + $aset->kolektibilitas5_d3;
         $total3_npf = $total3_kolektibilitas3 + $total3_kolektibilitas4 + $total3_kolektibilitas5;
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 14) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 14) {
             $car_14_1 = (14 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_14_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 14) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 14) {
             $car_14_2 = (14 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_14_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 14) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 14) {
             $car_14_3 = (14 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_14_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 12) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 12) {
             $car_12_1 = (12 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_12_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 12) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 12) {
             $car_12_2 = (12 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_12_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 12) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 12) {
             $car_12_3 = (12 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_12_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 8) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 8) {
             $car_8_1 = (8 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_8_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 8) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 8) {
             $car_8_2 = (8 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_8_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 8) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 8) {
             $car_8_3 = (8 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_8_3 = 0;
         }
 
-        if ((($total_modal_1/$total1_total_atmr)*100) < 4.1) {
+        if (($total1_total_atmr != 0) && (($total_modal_1/$total1_total_atmr)*100) < 4.1) {
             $car_41_1 = (4.1 - ($total_modal_1/$total1_total_atmr)*100)*($total1_total_atmr/100);
         }else{
             $car_41_1 = 0;
         }
 
-        if ((($total_modal_2/$total2_total_atmr)*100) < 4.1) {
+        if (($total2_total_atmr != 0) && (($total_modal_2/$total2_total_atmr)*100) < 4.1) {
             $car_41_2 = (4.1 - ($total_modal_2/$total2_total_atmr)*100)*($total2_total_atmr/100);
         }else{
             $car_41_2 = 0;
         }
 
-        if ((($total_modal_3/$total3_total_atmr)*100) < 4.1) {
+        if (($total3_total_atmr != 0) && (($total_modal_3/$total3_total_atmr)*100) < 4.1) {
             $car_41_3 = (4.1 - ($total_modal_3/$total3_total_atmr)*100)*($total3_total_atmr/100);
         }else{
             $car_41_3 = 0;

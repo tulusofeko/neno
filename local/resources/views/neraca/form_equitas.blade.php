@@ -30,7 +30,7 @@
 		Modal Disetor
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("modal_disetor_utama",null,['class'=>'form-control','id'=>'modal_disetor_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("modal_disetor_utama",null,['class'=>'form-control','id'=>'modal_disetor_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("modal_disetor_d1",null,['class'=>'form-control','id'=>'modal_disetor_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -57,7 +57,7 @@
 		Modal Pinjaman
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("modal_pinjaman_utama",null,['class'=>'form-control','id'=>'modal_pinjaman_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("modal_pinjaman_utama",null,['class'=>'form-control','id'=>'modal_pinjaman_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("modal_pinjaman_d1",null,['class'=>'form-control','id'=>'modal_pinjaman_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -84,7 +84,7 @@
 		Perkiraan Tambahan Modal Disetor
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("perkiraan_utama",null,['class'=>'form-control','id'=>'perkiraan_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("perkiraan_utama",null,['class'=>'form-control','id'=>'perkiraan_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("perkiraan_d1",null,['class'=>'form-control','id'=>'perkiraan_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -111,7 +111,7 @@
 		Selisih Penilaian Kembali Aset Tetap
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("selisih_utama",null,['class'=>'form-control','id'=>'selisih_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("selisih_utama",null,['class'=>'form-control','id'=>'selisih_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("selisih_d1",null,['class'=>'form-control','id'=>'selisih_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -138,7 +138,7 @@
 		Cadangan
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("cadangan_utama",null,['class'=>'form-control','id'=>'cadangan_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("cadangan_utama",null,['class'=>'form-control','id'=>'cadangan_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("cadangan_d1",null,['class'=>'form-control','id'=>'cadangan_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -165,7 +165,7 @@
 		Laba/(Rugi) Periode Sebelumnya
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("laba_sebelum_utama",null,['class'=>'form-control','id'=>'laba_sebelum_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("laba_sebelum_utama",null,['class'=>'form-control','id'=>'laba_sebelum_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("laba_sebelum_d1",null,['class'=>'form-control','id'=>'laba_sebelum_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}

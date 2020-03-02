@@ -56,7 +56,7 @@
 		Total Modal Inti
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("modal_inti_utama",null,['class'=>'form-control','id'=>'modal_inti_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("modal_inti_utama",null,['class'=>'form-control','id'=>'modal_inti_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("modal_inti_d1",null,['class'=>'form-control','id'=>'modal_inti_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -83,7 +83,7 @@
 		Total Modal Pelengkap
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("modal_pelengkap_utama",null,['class'=>'form-control','id'=>'modal_pelengkap_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("modal_pelengkap_utama",null,['class'=>'form-control','id'=>'modal_pelengkap_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("modal_pelengkap_d1",null,['class'=>'form-control','id'=>'modal_pelengkap_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -137,22 +137,22 @@
 		Total ATMR
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("total_atmr_utama",null,['class'=>'form-control','id'=>'total_atmr_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("total_atmr_utama",null,['class'=>'form-control','id'=>'total_atmr_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("total_atmr_d1",null,['class'=>'form-control','id'=>'total_atmr_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("total_atmr_d1",null,['class'=>'form-control','id'=>'total_atmr_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("total_atmr_k1",null,['class'=>'form-control','id'=>'total_atmr_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("total_atmr_d2",null,['class'=>'form-control','id'=>'total_atmr_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("total_atmr_d2",null,['class'=>'form-control','id'=>'total_atmr_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("total_atmr_k2",null,['class'=>'form-control','id'=>'total_atmr_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("total_atmr_d3",null,['class'=>'form-control','id'=>'total_atmr_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("total_atmr_d3",null,['class'=>'form-control','id'=>'total_atmr_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("total_atmr_k3",null,['class'=>'form-control','id'=>'total_atmr_k3','autocomplete' => 'off', 'disabled']) !!}
@@ -218,7 +218,7 @@
 		CKPN Pembiayaan Bermasalah
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("ckpn_utama",null,['class'=>'form-control','id'=>'ckpn_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("ckpn_utama",null,['class'=>'form-control','id'=>'ckpn_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ckpn_d1",null,['class'=>'form-control','id'=>'ckpn_d1','autocomplete' => 'off', 'disabled']) !!}

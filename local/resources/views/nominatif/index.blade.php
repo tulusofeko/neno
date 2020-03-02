@@ -26,12 +26,15 @@
     </a>
 </div>
 <div class="btn-group animated bounce delay-1s" data-toggle="tooltip" title="Cetak Data">
-        <a href="{{ url('download-nominatif') }}" target="_blank">
-          <button class="btn btn-social btn btn-default btn-sm">
-            <i class="fa fa-download"></i> <?php echo "CETAK DATA" ?>
-          </button>
-        </a>
-      </div>
+    <a href="{{ url('download-nominatif') }}" target="_blank">
+      <button class="btn btn-social btn btn-default btn-sm">
+        <i class="fa fa-download"></i> <?php echo "CETAK DATA" ?>
+      </button>
+    </a>
+</div>
+<button class="btn-group delete-modal btn btn-danger btn-sm animated bounce delay-1s btn btn-social" data-toggle="tooltip" title="Hapus Semua Data" data-id="all">
+  <span class="glyphicon glyphicon-trash"></span> HAPUS SEMUA DATA
+</button>
 <div class="btn-group animated bounce delay-1s" data-toggle="tooltip" title="Refresh Data">
   <a href="{{ url('nominatif') }}"> 
     <button class="btn bg-olive btn btn-social btn-lrg ajax btn-sm">

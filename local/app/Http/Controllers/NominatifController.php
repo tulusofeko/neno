@@ -473,8 +473,12 @@ class NominatifController extends Controller
      */
     public function destroy($id)
     {
-        $hapus= Nominatif::findOrFail($id);
-        $hapus->delete();
+        if ($id == "all") {
+            $hapus = Nominatif::truncate();
+        }else{
+            $hapus= Nominatif::findOrFail($id);
+            $hapus->delete();
+        }
         return response()->json($hapus);
     }
 

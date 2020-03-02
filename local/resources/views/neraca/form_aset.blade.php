@@ -30,7 +30,7 @@
 		Kas
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kas_utama",null,['class'=>'form-control','id'=>'kas_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kas_utama",null,['class'=>'form-control','id'=>'kas_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kas_d1",null,['class'=>'form-control','id'=>'kas_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -56,7 +56,7 @@
 		Penempatan pada BI
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("penempatan_bi_utama",null,['class'=>'form-control','id'=>'penempatan_bi_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("penempatan_bi_utama",null,['class'=>'form-control','id'=>'penempatan_bi_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("penempatan_bi_d1",null,['class'=>'form-control','id'=>'penempatan_bi_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -82,7 +82,7 @@
 		Penempatan pada Bank Lain
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("penempatan_lain_utama",null,['class'=>'form-control','id'=>'penempatan_lain_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("penempatan_lain_utama",null,['class'=>'form-control','id'=>'penempatan_lain_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("penempatan_lain_d1",null,['class'=>'form-control','id'=>'penempatan_lain_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -108,25 +108,25 @@
 		Surat Berharga
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("suber_utama",null,['class'=>'form-control','id'=>'suber_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("suber_utama",null,['class'=>'form-control','id'=>'suber_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("suber_d1",null,['class'=>'form-control','id'=>'suber_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("suber_k1",null,['class'=>'form-control','id'=>'suber_k1','autocomplete' => 'off']) !!}
+		{!! Form::number("suber_k1",null,['class'=>'form-control','id'=>'suber_k1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("suber_d2",null,['class'=>'form-control','id'=>'suber_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("suber_k2",null,['class'=>'form-control','id'=>'suber_k2','autocomplete' => 'off']) !!}
+		{!! Form::number("suber_k2",null,['class'=>'form-control','id'=>'suber_k2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("suber_d3",null,['class'=>'form-control','id'=>'suber_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("suber_k3",null,['class'=>'form-control','id'=>'suber_k3','autocomplete' => 'off']) !!}
+		{!! Form::number("suber_k3",null,['class'=>'form-control','id'=>'suber_k3','autocomplete' => 'off','required']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">
@@ -160,10 +160,10 @@
 		Kolektibilitas 1
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kolektibilitas1_utama",null,['class'=>'form-control','id'=>'kolektibilitas1_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas1_utama",null,['class'=>'form-control','id'=>'kolektibilitas1_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas1_d1",null,['class'=>'form-control','id'=>'kolektibilitas1_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas1_d1",null,['class'=>'form-control','id'=>'kolektibilitas1_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas1_k1",null,['class'=>'form-control','id'=>'kolektibilitas1_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -172,13 +172,13 @@
 		{!! Form::number("kolektibilitas1_d2",null,['class'=>'form-control','id'=>'kolektibilitas1_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas1_k2",null,['class'=>'form-control','id'=>'kolektibilitas1_k2','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas1_k2",null,['class'=>'form-control','id'=>'kolektibilitas1_k2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas1_d3",null,['class'=>'form-control','id'=>'kolektibilitas1_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas1_k3",null,['class'=>'form-control','id'=>'kolektibilitas1_k3','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas1_k3",null,['class'=>'form-control','id'=>'kolektibilitas1_k3','autocomplete' => 'off','required']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">
@@ -186,10 +186,10 @@
 		Kolektibilitas 2
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kolektibilitas2_utama",null,['class'=>'form-control','id'=>'kolektibilitas2_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas2_utama",null,['class'=>'form-control','id'=>'kolektibilitas2_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas2_d1",null,['class'=>'form-control','id'=>'kolektibilitas2_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas2_d1",null,['class'=>'form-control','id'=>'kolektibilitas2_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas2_k1",null,['class'=>'form-control','id'=>'kolektibilitas2_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -198,10 +198,10 @@
 		{!! Form::number("kolektibilitas2_d2",null,['class'=>'form-control','id'=>'kolektibilitas2_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas2_k2",null,['class'=>'form-control','id'=>'kolektibilitas2_k2','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas2_k2",null,['class'=>'form-control','id'=>'kolektibilitas2_k2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas2_d3",null,['class'=>'form-control','id'=>'kolektibilitas2_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas2_d3",null,['class'=>'form-control','id'=>'kolektibilitas2_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas2_k3",null,['class'=>'form-control','id'=>'kolektibilitas2_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -212,16 +212,16 @@
 		Kolektibilitas 3
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kolektibilitas3_utama",null,['class'=>'form-control','id'=>'kolektibilitas3_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas3_utama",null,['class'=>'form-control','id'=>'kolektibilitas3_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas3_d1",null,['class'=>'form-control','id'=>'kolektibilitas3_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas3_d1",null,['class'=>'form-control','id'=>'kolektibilitas3_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas3_k1",null,['class'=>'form-control','id'=>'kolektibilitas3_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas3_d2",null,['class'=>'form-control','id'=>'kolektibilitas3_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas3_d2",null,['class'=>'form-control','id'=>'kolektibilitas3_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas3_k2",null,['class'=>'form-control','id'=>'kolektibilitas3_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -230,7 +230,7 @@
 		{!! Form::number("kolektibilitas3_d3",null,['class'=>'form-control','id'=>'kolektibilitas3_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas3_k3",null,['class'=>'form-control','id'=>'kolektibilitas3_k3','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas3_k3",null,['class'=>'form-control','id'=>'kolektibilitas3_k3','autocomplete' => 'off','required']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">
@@ -238,22 +238,22 @@
 		Kolektibilitas 4
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kolektibilitas4_utama",null,['class'=>'form-control','id'=>'kolektibilitas4_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas4_utama",null,['class'=>'form-control','id'=>'kolektibilitas4_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas4_d1",null,['class'=>'form-control','id'=>'kolektibilitas4_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas4_d1",null,['class'=>'form-control','id'=>'kolektibilitas4_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas4_k1",null,['class'=>'form-control','id'=>'kolektibilitas4_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas4_d2",null,['class'=>'form-control','id'=>'kolektibilitas4_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas4_d2",null,['class'=>'form-control','id'=>'kolektibilitas4_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas4_k2",null,['class'=>'form-control','id'=>'kolektibilitas4_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas4_d3",null,['class'=>'form-control','id'=>'kolektibilitas4_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas4_d3",null,['class'=>'form-control','id'=>'kolektibilitas4_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas4_k3",null,['class'=>'form-control','id'=>'kolektibilitas4_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -264,22 +264,22 @@
 		Kolektibilitas 5
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("kolektibilitas5_utama",null,['class'=>'form-control','id'=>'kolektibilitas5_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas5_utama",null,['class'=>'form-control','id'=>'kolektibilitas5_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas5_d1",null,['class'=>'form-control','id'=>'kolektibilitas5_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas5_d1",null,['class'=>'form-control','id'=>'kolektibilitas5_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas5_k1",null,['class'=>'form-control','id'=>'kolektibilitas5_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas5_d2",null,['class'=>'form-control','id'=>'kolektibilitas5_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas5_d2",null,['class'=>'form-control','id'=>'kolektibilitas5_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas5_k2",null,['class'=>'form-control','id'=>'kolektibilitas5_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("kolektibilitas5_d3",null,['class'=>'form-control','id'=>'kolektibilitas5_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("kolektibilitas5_d3",null,['class'=>'form-control','id'=>'kolektibilitas5_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("kolektibilitas5_k3",null,['class'=>'form-control','id'=>'kolektibilitas5_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -290,7 +290,7 @@
 		Penyertaan
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("penyertaan_utama",null,['class'=>'form-control','id'=>'penyertaan_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("penyertaan_utama",null,['class'=>'form-control','id'=>'penyertaan_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("penyertaan_d1",null,['class'=>'form-control','id'=>'penyertaan_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -316,7 +316,7 @@
 		CKPN Aset Produktif
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("ckpnp_utama",null,['class'=>'form-control','id'=>'ckpnp_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("ckpnp_utama",null,['class'=>'form-control','id'=>'ckpnp_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ckpnp_d1",null,['class'=>'form-control','id'=>'ckpnp_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -342,7 +342,7 @@
 		Asset Tetap
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("astet_utama",null,['class'=>'form-control','id'=>'astet_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("astet_utama",null,['class'=>'form-control','id'=>'astet_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("astet_d1",null,['class'=>'form-control','id'=>'astet_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -368,7 +368,7 @@
 		Akumulasi Penyusutan Aset Tetap
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("akumulasi_utama",null,['class'=>'form-control','id'=>'akumulasi_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("akumulasi_utama",null,['class'=>'form-control','id'=>'akumulasi_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("akumulasi_d1",null,['class'=>'form-control','id'=>'akumulasi_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -394,7 +394,7 @@
 		Properti Terbengkalai
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("properti_utama",null,['class'=>'form-control','id'=>'properti_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("properti_utama",null,['class'=>'form-control','id'=>'properti_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("properti_d1",null,['class'=>'form-control','id'=>'properti_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -421,22 +421,22 @@
 		AYDA
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("ayda_utama",null,['class'=>'form-control','id'=>'ayda_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("ayda_utama",null,['class'=>'form-control','id'=>'ayda_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ayda_d1",null,['class'=>'form-control','id'=>'ayda_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("ayda_d1",null,['class'=>'form-control','id'=>'ayda_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ayda_k1",null,['class'=>'form-control','id'=>'ayda_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ayda_d2",null,['class'=>'form-control','id'=>'ayda_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("ayda_d2",null,['class'=>'form-control','id'=>'ayda_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ayda_k2",null,['class'=>'form-control','id'=>'ayda_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ayda_d3",null,['class'=>'form-control','id'=>'ayda_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("ayda_d3",null,['class'=>'form-control','id'=>'ayda_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ayda_k3",null,['class'=>'form-control','id'=>'ayda_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -448,22 +448,22 @@
 		Rekening Tunda
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("rekening_utama",null,['class'=>'form-control','id'=>'rekening_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("rekening_utama",null,['class'=>'form-control','id'=>'rekening_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("rekening_d1",null,['class'=>'form-control','id'=>'rekening_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("rekening_d1",null,['class'=>'form-control','id'=>'rekening_d1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("rekening_k1",null,['class'=>'form-control','id'=>'rekening_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("rekening_d2",null,['class'=>'form-control','id'=>'rekening_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("rekening_d2",null,['class'=>'form-control','id'=>'rekening_d2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("rekening_k2",null,['class'=>'form-control','id'=>'rekening_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("rekening_d3",null,['class'=>'form-control','id'=>'rekening_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("rekening_d3",null,['class'=>'form-control','id'=>'rekening_d3','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("rekening_k3",null,['class'=>'form-control','id'=>'rekening_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -475,7 +475,7 @@
 		CKPN Aset Lainnya
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("ckpnl_utama",null,['class'=>'form-control','id'=>'ckpnl_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("ckpnl_utama",null,['class'=>'form-control','id'=>'ckpnl_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ckpnl_d1",null,['class'=>'form-control','id'=>'ckpnl_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -502,22 +502,22 @@
 		Lainnya
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("lain_utama",null,['class'=>'form-control','id'=>'lain_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("lain_utama",null,['class'=>'form-control','id'=>'lain_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d1",null,['class'=>'form-control','id'=>'lain_d1','autocomplete' => 'off']) !!}
+		{!! Form::number("lain_d1",null,['class'=>'form-control','id'=>'lain_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k1",null,['class'=>'form-control','id'=>'lain_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d2",null,['class'=>'form-control','id'=>'lain_d2','autocomplete' => 'off']) !!}
+		{!! Form::number("lain_d2",null,['class'=>'form-control','id'=>'lain_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k2",null,['class'=>'form-control','id'=>'lain_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("lain_d3",null,['class'=>'form-control','id'=>'lain_d3','autocomplete' => 'off']) !!}
+		{!! Form::number("lain_d3",null,['class'=>'form-control','id'=>'lain_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("lain_k3",null,['class'=>'form-control','id'=>'lain_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}

@@ -2,7 +2,7 @@
   <div class="col-md-6">
       <div class="form-group @if ($errors->has('nama_bank')) has-error @endif">
         {!! Form::label("nama_bank","NAMA INSTANSI",["class"=>"control-label"]) !!}
-        {!! Form::text("nama_bank",null,['class'=>'form-control', 'placeholder'=>'Masukan data ..','id'=>'nama_bank','autocomplete' => 'off']) !!}
+        {!! Form::text("nama_bank",null,['class'=>'form-control', 'placeholder'=>'Masukan data ..','id'=>'nama_bank','autocomplete' => 'off','required']) !!}
         @if ($errors->has('nama_bank')) <p class="text-center alert alert-danger">{{ $errors->first('nama_bank') }}</p> @endif
       </div>
   </div>
@@ -13,7 +13,7 @@
           <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
               </div>
-              {!! Form::text('tanggal',null, ['class'=>'form-control pull-right','id'=>'datepicker','placeholder'=>'Masukan Tanggal Perhitungan','autocomplete' => 'off']) !!}
+              {!! Form::text('tanggal',null, ['class'=>'form-control pull-right','id'=>'datepicker','placeholder'=>'Masukan Tanggal Perhitungan','autocomplete' => 'off','required']) !!}
         </div>
         @if ($errors->has('tanggal')) <p class="text-center alert alert-danger">{{ $errors->first('tanggal') }}</p> @endif
     </div>

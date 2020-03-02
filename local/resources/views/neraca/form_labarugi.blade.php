@@ -30,7 +30,7 @@
 		Pendapatan Dari Penyaluran Dana
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("pendapatan_penyaluran_utama",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("pendapatan_penyaluran_utama",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("pendapatan_penyaluran_d1",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -57,7 +57,7 @@
 		Bagi Hasil Untuk Pemilik Dana Investasi
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("bagi_hasil_utama",null,['class'=>'form-control','id'=>'bagi_hasil_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("bagi_hasil_utama",null,['class'=>'form-control','id'=>'bagi_hasil_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("bagi_hasil_d1",null,['class'=>'form-control','id'=>'bagi_hasil_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -111,7 +111,7 @@
 		Pendapatan Operasional Lainnya
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("pendapatan_ops_utama",null,['class'=>'form-control','id'=>'pendapatan_ops_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("pendapatan_ops_utama",null,['class'=>'form-control','id'=>'pendapatan_ops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("pendapatan_ops_d1",null,['class'=>'form-control','id'=>'pendapatan_ops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -138,7 +138,7 @@
 		Beban Operasional
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("beban_ops_utama",null,['class'=>'form-control','id'=>'beban_ops_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("beban_ops_utama",null,['class'=>'form-control','id'=>'beban_ops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("beban_ops_d1",null,['class'=>'form-control','id'=>'beban_ops_d1','autocomplete' => 'off', 'disabled']) !!}
@@ -192,7 +192,7 @@
 		Pendapatan Non Operasional
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("pendapatan_nops_utama",null,['class'=>'form-control','id'=>'pendapatan_nops_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("pendapatan_nops_utama",null,['class'=>'form-control','id'=>'pendapatan_nops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("pendapatan_nops_d1",null,['class'=>'form-control','id'=>'pendapatan_nops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -219,7 +219,7 @@
 		Beban Non Operasional
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("beban_nops_utama",null,['class'=>'form-control','id'=>'beban_nops_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("beban_nops_utama",null,['class'=>'form-control','id'=>'beban_nops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("beban_nops_d1",null,['class'=>'form-control','id'=>'beban_nops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
@@ -297,7 +297,7 @@
 		Pajak Penghasilan
 	</div>
 	<div class="col-md-2">
-		{!! Form::number("pajak_penghasilan_utama",null,['class'=>'form-control','id'=>'pajak_penghasilan_utama','autocomplete' => 'off']) !!}
+		{!! Form::number("pajak_penghasilan_utama",null,['class'=>'form-control','id'=>'pajak_penghasilan_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("pajak_penghasilan_d1",null,['class'=>'form-control','id'=>'pajak_penghasilan_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
