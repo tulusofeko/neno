@@ -1,9 +1,9 @@
 <div class="row" align="center">
   	<div class="col-md-4">
-  		<b>Nama Item</b>
+  		<b>Pos</b>
   	</div>
   	<div class="col-md-2">
-  		<b>Inputan Instansi</b>
+  		<b>Nominal</b>
   	</div>
   	<div class="col-md-2">
   		<b>Adjustment Asset Swap</b>

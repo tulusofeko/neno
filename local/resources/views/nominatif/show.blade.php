@@ -92,13 +92,13 @@
             </td>
           </tr>
           <tr>
-            <td><strong>Kol Auditor</strong></td>
+            <td><strong>Kol OJK</strong></td>
             <td>
               {{ $nominatif->kol_auditor != NULL ? number_format($nominatif->kol_auditor, 0, ",", ".") : '-' }}
             </td>
           </tr>
           <tr>
-            <td><strong>AYDD Auditor</strong></td>
+            <td><strong>AYDD OJK</strong></td>
             <td>
               {{ $nominatif->aydd_auditor != NULL ? number_format($nominatif->aydd_auditor, 0, ",", ".") : '-' }}
             </td>
@@ -119,7 +119,7 @@
             <th style="width: 75%;">Data</th>
           </tr>
           <tr>
-            <td><strong>OS-AYDD Auditor</strong></td>
+            <td><strong>OS-AYDD OJK</strong></td>
             <td>
               {{ $os_aydd != NULL ? "Rp " . number_format($os_aydd, 2, ",", ".") : '-' }}
             </td>

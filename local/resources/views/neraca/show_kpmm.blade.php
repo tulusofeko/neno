@@ -17,6 +17,7 @@
         <td align="right">{{ $kpmm->modal_inti_k3 != NULL ? "Rp " . number_format($kpmm->modal_inti_k3, 2, ",", ".") : '-' }}</td>
         <td align="right">{{ $total3_modal_inti != NULL ? "Rp " . number_format($total3_modal_inti, 2, ",", ".") : '-' }}</td>
       </tr>
+      
       <tr>
         <td>Total Modal Pelengkap</td>
         <td align="right">{{ $kpmm->modal_pelengkap_utama != NULL ? "Rp " . number_format($kpmm->modal_pelengkap_utama, 2, ",", ".") : '-' }}</td>
@@ -116,7 +117,7 @@
     </tr>
 
     <tr>
-        <td><b>Rasio NPF Nett</b></td>
+        <td><b>Rasio NPF Net</b></td>
         <td align="right">{{ number_format((($npf_utama + $kpmm->ckpn_utama)/$pembiayaan_utama)*100, 2, ",", ".") }}%</td>
         <td></td>
         <td></td>

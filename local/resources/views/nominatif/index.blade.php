@@ -54,9 +54,9 @@
           <th style="width: 17%">Nama</th>
           <th>Outstanding</th>
           <th>PPAP TB</th>
-          <th>Kol Auditor</th>
-          <th>AYDD Auditor</th>
-          <th>Keterangan Lain</th>
+          <th>Kol OJK</th>
+          <th>AYDD OJK</th>
+          <th>Keterangan</th>
           <th style="width: 10%">Riwayat Modifikasi</th>
           <th style="width: 10%">Actions</th>
       </thead>

@@ -110,6 +110,8 @@ class NominatifController extends Controller
      */
     public function rekons(RekonRequest $request)
     { 
+        ini_set('max_execution_time', '600');
+
         $kategori = Input::get('kategori');
         ErrorRekon::truncate();
         if($kategori == 'nasabah'){

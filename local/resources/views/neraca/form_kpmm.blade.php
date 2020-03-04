@@ -1,9 +1,9 @@
 <div class="row" align="center">
   	<div class="col-md-4">
-  		<b>Nama Item</b>
+  		<b>Pos</b>
   	</div>
   	<div class="col-md-2">
-  		<b>Inputan Instansi</b>
+  		<b>Nominal</b>
   	</div>
   	<div class="col-md-2">
   		<b>Adjustment Asset Swap</b>
@@ -59,22 +59,22 @@
 		{!! Form::number("modal_inti_utama",null,['class'=>'form-control','id'=>'modal_inti_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_d1",null,['class'=>'form-control','id'=>'modal_inti_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_d1",null,['class'=>'form-control','id'=>'modal_inti_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_k1",null,['class'=>'form-control','id'=>'modal_inti_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_k1",null,['class'=>'form-control','id'=>'modal_inti_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_d2",null,['class'=>'form-control','id'=>'modal_inti_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_d2",null,['class'=>'form-control','id'=>'modal_inti_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_k2",null,['class'=>'form-control','id'=>'modal_inti_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_k2",null,['class'=>'form-control','id'=>'modal_inti_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_d3",null,['class'=>'form-control','id'=>'modal_inti_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_d3",null,['class'=>'form-control','id'=>'modal_inti_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_inti_k3",null,['class'=>'form-control','id'=>'modal_inti_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_inti_k3",null,['class'=>'form-control','id'=>'modal_inti_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -86,22 +86,22 @@
 		{!! Form::number("modal_pelengkap_utama",null,['class'=>'form-control','id'=>'modal_pelengkap_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_d1",null,['class'=>'form-control','id'=>'modal_pelengkap_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_d1",null,['class'=>'form-control','id'=>'modal_pelengkap_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_k1",null,['class'=>'form-control','id'=>'modal_pelengkap_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_k1",null,['class'=>'form-control','id'=>'modal_pelengkap_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_d2",null,['class'=>'form-control','id'=>'modal_pelengkap_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_d2",null,['class'=>'form-control','id'=>'modal_pelengkap_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_k2",null,['class'=>'form-control','id'=>'modal_pelengkap_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_k2",null,['class'=>'form-control','id'=>'modal_pelengkap_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_d3",null,['class'=>'form-control','id'=>'modal_pelengkap_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_d3",null,['class'=>'form-control','id'=>'modal_pelengkap_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("modal_pelengkap_k3",null,['class'=>'form-control','id'=>'modal_pelengkap_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("modal_pelengkap_k3",null,['class'=>'form-control','id'=>'modal_pelengkap_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -269,7 +269,7 @@
 
 <div class="row" align="center" style="margin-top: 10px;">
 	<div class="col-md-4" align="left" style="font-size: 1.2em;">
-		Rasio NPF Nett
+		Rasio NPF Net
 	</div>
 	<div class="col-md-2">
 		{!! Form::number("npf_nett_utama",null,['class'=>'form-control','id'=>'npf_nett_utama','autocomplete' => 'off', 'disabled']) !!}

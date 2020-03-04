@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
       <div class="form-group @if ($errors->has('nama_bank')) has-error @endif">
-        {!! Form::label("nama_bank","NAMA INSTANSI",["class"=>"control-label"]) !!}
+        {!! Form::label("nama_bank","NAMA BANK",["class"=>"control-label"]) !!}
         {!! Form::text("nama_bank",null,['class'=>'form-control', 'placeholder'=>'Masukan data ..','id'=>'nama_bank','autocomplete' => 'off','required']) !!}
         @if ($errors->has('nama_bank')) <p class="text-center alert alert-danger">{{ $errors->first('nama_bank') }}</p> @endif
       </div>
@@ -47,7 +47,7 @@
         <i class="fa fa-university" aria-hidden="true"></i><b> ASET</b>
       </a>
     </li>
-    <li class="pull-left header"><i class="fa fa-th"></i> Form Perhitungan Neraca</li>
+    <li class="pull-left header"><i class="fa fa-th"></i> Neraca</li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab_5-5">

@@ -35,7 +35,7 @@
         <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41 animated bounceInUp">
-                    <h4 class="ml12" style="font-size: 0.6em;">APP NERACA NOMINATIF</h4>
+                    <h4 class="ml12" style="font-size: 0.9em;">SIMULASI CAR</h4>
                 </span>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

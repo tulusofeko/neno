@@ -20,9 +20,9 @@
                 <th align="center" width="30">KOL 1 PILAR</th> 
                 <th align="center" width="30">KOL 3 PILAR</th> 
                 <th align="center" width="30">SAMPLE</th>  
-                <th align="center" width="30">KOL AUDITOR</th>  
-                <th align="center" width="30">AYDD AUDITOR</th> 
-                <th align="center" width="30">OS-AYDD AUDITOR</th> 
+                <th align="center" width="30">KOL OJK</th>  
+                <th align="center" width="30">AYDD OJK</th> 
+                <th align="center" width="30">OS-AYDD OJK</th> 
                 <th align="center" width="30">TARIF PPA KOL LSMK</th>   
                 <th align="center" width="30">PPA WB KOL LSMK</th>      
                 <th align="center" width="30">PPA KB KOL LSMK</th>     
