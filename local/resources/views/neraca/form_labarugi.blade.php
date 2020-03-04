@@ -33,22 +33,22 @@
 		{!! Form::number("pendapatan_penyaluran_utama",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_d1",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_d1",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_k1",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_k1",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_d2",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_d2",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_k2",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_k2",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_d3",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_d3",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_penyaluran_k3",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_penyaluran_k3",null,['class'=>'form-control','id'=>'pendapatan_penyaluran_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -60,22 +60,22 @@
 		{!! Form::number("bagi_hasil_utama",null,['class'=>'form-control','id'=>'bagi_hasil_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_d1",null,['class'=>'form-control','id'=>'bagi_hasil_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_d1",null,['class'=>'form-control','id'=>'bagi_hasil_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_k1",null,['class'=>'form-control','id'=>'bagi_hasil_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_k1",null,['class'=>'form-control','id'=>'bagi_hasil_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_d2",null,['class'=>'form-control','id'=>'bagi_hasil_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_d2",null,['class'=>'form-control','id'=>'bagi_hasil_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_k2",null,['class'=>'form-control','id'=>'bagi_hasil_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_k2",null,['class'=>'form-control','id'=>'bagi_hasil_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_d3",null,['class'=>'form-control','id'=>'bagi_hasil_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_d3",null,['class'=>'form-control','id'=>'bagi_hasil_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("bagi_hasil_k3",null,['class'=>'form-control','id'=>'bagi_hasil_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("bagi_hasil_k3",null,['class'=>'form-control','id'=>'bagi_hasil_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -114,22 +114,22 @@
 		{!! Form::number("pendapatan_ops_utama",null,['class'=>'form-control','id'=>'pendapatan_ops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_d1",null,['class'=>'form-control','id'=>'pendapatan_ops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_d1",null,['class'=>'form-control','id'=>'pendapatan_ops_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_k1",null,['class'=>'form-control','id'=>'pendapatan_ops_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_k1",null,['class'=>'form-control','id'=>'pendapatan_ops_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_d2",null,['class'=>'form-control','id'=>'pendapatan_ops_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_d2",null,['class'=>'form-control','id'=>'pendapatan_ops_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_k2",null,['class'=>'form-control','id'=>'pendapatan_ops_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_k2",null,['class'=>'form-control','id'=>'pendapatan_ops_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_d3",null,['class'=>'form-control','id'=>'pendapatan_ops_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_d3",null,['class'=>'form-control','id'=>'pendapatan_ops_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_ops_k3",null,['class'=>'form-control','id'=>'pendapatan_ops_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_ops_k3",null,['class'=>'form-control','id'=>'pendapatan_ops_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -144,19 +144,19 @@
 		{!! Form::number("beban_ops_d1",null,['class'=>'form-control','id'=>'beban_ops_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_ops_k1",null,['class'=>'form-control','id'=>'beban_ops_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_ops_k1",null,['class'=>'form-control','id'=>'beban_ops_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("beban_ops_d2",null,['class'=>'form-control','id'=>'beban_ops_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_ops_k2",null,['class'=>'form-control','id'=>'beban_ops_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_ops_k2",null,['class'=>'form-control','id'=>'beban_ops_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("beban_ops_d3",null,['class'=>'form-control','id'=>'beban_ops_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_ops_k3",null,['class'=>'form-control','id'=>'beban_ops_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_ops_k3",null,['class'=>'form-control','id'=>'beban_ops_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -195,22 +195,22 @@
 		{!! Form::number("pendapatan_nops_utama",null,['class'=>'form-control','id'=>'pendapatan_nops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_d1",null,['class'=>'form-control','id'=>'pendapatan_nops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_d1",null,['class'=>'form-control','id'=>'pendapatan_nops_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_k1",null,['class'=>'form-control','id'=>'pendapatan_nops_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_k1",null,['class'=>'form-control','id'=>'pendapatan_nops_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_d2",null,['class'=>'form-control','id'=>'pendapatan_nops_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_d2",null,['class'=>'form-control','id'=>'pendapatan_nops_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_k2",null,['class'=>'form-control','id'=>'pendapatan_nops_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_k2",null,['class'=>'form-control','id'=>'pendapatan_nops_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_d3",null,['class'=>'form-control','id'=>'pendapatan_nops_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_d3",null,['class'=>'form-control','id'=>'pendapatan_nops_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pendapatan_nops_k3",null,['class'=>'form-control','id'=>'pendapatan_nops_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pendapatan_nops_k3",null,['class'=>'form-control','id'=>'pendapatan_nops_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 
@@ -222,22 +222,22 @@
 		{!! Form::number("beban_nops_utama",null,['class'=>'form-control','id'=>'beban_nops_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_d1",null,['class'=>'form-control','id'=>'beban_nops_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_d1",null,['class'=>'form-control','id'=>'beban_nops_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_k1",null,['class'=>'form-control','id'=>'beban_nops_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_k1",null,['class'=>'form-control','id'=>'beban_nops_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_d2",null,['class'=>'form-control','id'=>'beban_nops_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_d2",null,['class'=>'form-control','id'=>'beban_nops_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_k2",null,['class'=>'form-control','id'=>'beban_nops_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_k2",null,['class'=>'form-control','id'=>'beban_nops_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_d3",null,['class'=>'form-control','id'=>'beban_nops_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_d3",null,['class'=>'form-control','id'=>'beban_nops_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("beban_nops_k3",null,['class'=>'form-control','id'=>'beban_nops_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("beban_nops_k3",null,['class'=>'form-control','id'=>'beban_nops_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">
@@ -300,22 +300,22 @@
 		{!! Form::number("pajak_penghasilan_utama",null,['class'=>'form-control','id'=>'pajak_penghasilan_utama','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_d1",null,['class'=>'form-control','id'=>'pajak_penghasilan_d1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_d1",null,['class'=>'form-control','id'=>'pajak_penghasilan_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_k1",null,['class'=>'form-control','id'=>'pajak_penghasilan_k1','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_k1",null,['class'=>'form-control','id'=>'pajak_penghasilan_k1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_d2",null,['class'=>'form-control','id'=>'pajak_penghasilan_d2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_d2",null,['class'=>'form-control','id'=>'pajak_penghasilan_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_k2",null,['class'=>'form-control','id'=>'pajak_penghasilan_k2','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_k2",null,['class'=>'form-control','id'=>'pajak_penghasilan_k2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_d3",null,['class'=>'form-control','id'=>'pajak_penghasilan_d3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_d3",null,['class'=>'form-control','id'=>'pajak_penghasilan_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("pajak_penghasilan_k3",null,['class'=>'form-control','id'=>'pajak_penghasilan_k3','autocomplete' => 'off','style' => 'background-color: #fff5cc;']) !!}
+		{!! Form::number("pajak_penghasilan_k3",null,['class'=>'form-control','id'=>'pajak_penghasilan_k3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">
