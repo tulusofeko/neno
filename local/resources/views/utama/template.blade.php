@@ -1,12 +1,12 @@
 {{--
  *
- *   SIMANTA
+ *   SIMULASI CAR
  *   Author: Eko Tulus Budi Cahyanto
  *   License: Need Verified From Author
  *   App Version : 1.0
  *
  *
- *   Copyright : C S T 9 @ DESEMBER.2019 All rights reserved.
+ *   Copyright : C S T 9 @ FEBRUARI.2020 All rights reserved.
  *
  --}}
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="_token" content="{{ csrf_token() }}"/>
-  <title>APLIKASI NeNo</title>
+  <title>SIMULASI CAR</title>
   <link rel="icon" type="image/ico" href="{{ asset('arsip/fileMaster/logo.png')}}">
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

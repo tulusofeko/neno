@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>APLIKASI NERACA NOMINATIF</title>
+    <title>SIMULASI CAR</title>
     <link rel="icon" type="image/ico" href="{{ asset('arsip/fileMaster/logo.png')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
