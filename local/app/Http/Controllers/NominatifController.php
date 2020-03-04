@@ -110,7 +110,7 @@ class NominatifController extends Controller
      */
     public function rekons(RekonRequest $request)
     { 
-        ini_set('max_execution_time', '600');
+        ini_set('max_execution_time', '0');
 
         $kategori = Input::get('kategori');
         ErrorRekon::truncate();
@@ -126,7 +126,7 @@ class NominatifController extends Controller
                 if(!empty($import_data_filter && sizeof($import_data_filter))){
                     $export_error_data = $import_data_filter;
                     $datacount = sizeof($export_error_data);
-                    if ($datacount <= 200 ) {
+                    if ($datacount <= 2000 ) {
                         $j = 0; $k = 0; $l = 0;
                         for ($i = 0; $i < $datacount; $i++) {
                             $a =0;
@@ -186,7 +186,7 @@ class NominatifController extends Controller
 
                     }else{
                         $notification = array(
-                            'message' => 'Maksimal input data adalah 200 data !',
+                            'message' => 'Maksimal input data adalah 2000 data !',
                             'alert-type' => 'error',
                         );
                         return redirect()->back()->with($notification);
