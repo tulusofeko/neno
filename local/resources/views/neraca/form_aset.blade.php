@@ -322,19 +322,19 @@
 		{!! Form::number("ckpnp_d1",null,['class'=>'form-control','id'=>'ckpnp_d1','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ckpnp_k1",null,['class'=>'form-control','id'=>'ckpnp_k1','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("ckpnp_k1",null,['class'=>'form-control','id'=>'ckpnp_k1','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ckpnp_d2",null,['class'=>'form-control','id'=>'ckpnp_d2','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ckpnp_k2",null,['class'=>'form-control','id'=>'ckpnp_k2','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("ckpnp_k2",null,['class'=>'form-control','id'=>'ckpnp_k2','autocomplete' => 'off','required']) !!}
 	</div>
 	<div class="col-md-1">
 		{!! Form::number("ckpnp_d3",null,['class'=>'form-control','id'=>'ckpnp_d3','autocomplete' => 'off', 'disabled']) !!}
 	</div>
 	<div class="col-md-1">
-		{!! Form::number("ckpnp_k3",null,['class'=>'form-control','id'=>'ckpnp_k3','autocomplete' => 'off', 'disabled']) !!}
+		{!! Form::number("ckpnp_k3",null,['class'=>'form-control','id'=>'ckpnp_k3','autocomplete' => 'off','required']) !!}
 	</div>
 </div>
 <div class="row" align="center" style="margin-top: 10px;">

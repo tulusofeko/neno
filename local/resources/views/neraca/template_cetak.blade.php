@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="_token" content="{{ csrf_token() }}"/>
-	<title>HASIL PERHITUNGAN</title>
+	<title>SIMULASI</title>
 	<link rel="icon" type="image/ico" href="{{ asset('/arsip/fileMaster/logo.png')}}">
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -54,7 +54,7 @@
 </head>
 <body>
 <header>
-    HASIL PERHITUNGAN
+    SIMULASI
 </header>
 <div class="wraper">
 	<table style="width:100%; font-size: 0.55em;">
@@ -108,9 +108,9 @@
 </div>
 <script type="text/php">
     if ( isset($pdf) ) {
-        $x = 535;
+        $x = 605;
         $y = 575;
-        $text = "Copyright 2020 OJK - Dicetak tanggal {{ date('d-m-Y') }} dari APP NENO OJK - Page : {PAGE_NUM} of {PAGE_COUNT}";
+        $text = "Input by {{ strtoupper($pembuat) }} tanggal {{ date('d-m-Y') }} - Page : {PAGE_NUM} of {PAGE_COUNT}";
         $font = $fontMetrics->get_font("Arial", "italic");
         $size = 7;
         $color = array(0,0,0);

@@ -40,7 +40,7 @@
         <td align="right">{{ $total_modal_1 != NULL ? "Rp " . number_format($total_modal_1, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
-        <td align="right">{{ $total_modal_2 != NULL ? "Rp " . number_format($total_modal_3, 2, ",", ".") : '-' }}</td>
+        <td align="right">{{ $total_modal_2 != NULL ? "Rp " . number_format($total_modal_2, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
         <td align="right">{{ $total_modal_3 != NULL ? "Rp " . number_format($total_modal_3, 2, ",", ".") : '-' }}</td>

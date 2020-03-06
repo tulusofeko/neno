@@ -438,9 +438,9 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
-        $aset->ckpnp_k1 = round($this->ckpnAsets0());
-        $aset->ckpnp_k3 = round($this->ckpnAsets1());
-        $aset->ckpnp_k2 = round($this->ckpnAsets3());
+        // $aset->ckpnp_k1 = round($this->ckpnAsets0());
+        // $aset->ckpnp_k3 = round($this->ckpnAsets1());
+        // $aset->ckpnp_k2 = round($this->ckpnAsets3());
         $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
@@ -633,29 +633,46 @@ class NeracaController extends Controller
         $total2_modal_inti = $kpmm->modal_inti_utama + $modal_inti_d2;
         $total3_modal_inti = $kpmm->modal_inti_utama + $modal_inti_d3;
 
-        $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d1;
-        $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d2;
-        $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d3;
+        if ($total1_modal_inti > 0) {
+            $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total1_modal_pelengkap = 0;
+        }
 
-        if ($kpmm->modal_pelengkap_utama > 0) {
+        if ($total2_modal_inti > 0) {
+            $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total2_modal_pelengkap = 0;
+        }
+
+        if ($total3_modal_inti > 0) {
+            $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total3_modal_pelengkap = 0;
+        }
+        // $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d1;
+        // $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d2;
+        // $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d3;
+
+        if ($kpmm->modal_pelengkap_utama >= 0) {
             $total_modal_utama = $kpmm->modal_inti_utama + $kpmm->modal_pelengkap_utama;    
         }else{
             $total_modal_utama = 0;
         }
 
-        if ($total1_modal_pelengkap > 0) {
+        if ($total1_modal_pelengkap >= 0) {
             $total_modal_1 = $total1_modal_inti + $total1_modal_pelengkap;    
         }else{
             $total_modal_1 = 0;
         }
 
-        if ($total2_modal_pelengkap > 0) {
+        if ($total2_modal_pelengkap >= 0) {
             $total_modal_2 = $total2_modal_inti + $total2_modal_pelengkap;    
         }else{
             $total_modal_2 = 0;
         }
 
-        if ($total3_modal_pelengkap > 0) {
+        if ($total3_modal_pelengkap >= 0) {
             $total_modal_3 = $total3_modal_inti + $total3_modal_pelengkap;    
         }else{
             $total_modal_3 = 0;
@@ -792,6 +809,7 @@ class NeracaController extends Controller
         
         $referensi = Bank::where('referensi',$id)->value('id');
         $data = Bank::findOrFail($referensi);
+        $pembuat = User::where('id',$data->id_pegawai)->value('nama');
         //KATEGORI ASET
         $id_aset = Aset::where('referensi',$data->referensi)->value('id');
         $aset = Aset::findOrFail($id_aset);
@@ -837,9 +855,9 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
-        $aset->ckpnp_k1 = round($this->ckpnAsets0());
-        $aset->ckpnp_k3 = round($this->ckpnAsets1());
-        $aset->ckpnp_k2 = round($this->ckpnAsets3());
+        // $aset->ckpnp_k1 = round($this->ckpnAsets0());
+        // $aset->ckpnp_k3 = round($this->ckpnAsets1());
+        // $aset->ckpnp_k2 = round($this->ckpnAsets3());
         $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
@@ -1032,29 +1050,46 @@ class NeracaController extends Controller
         $total2_modal_inti = $kpmm->modal_inti_utama + $modal_inti_d2;
         $total3_modal_inti = $kpmm->modal_inti_utama + $modal_inti_d3;
 
-        $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d1;
-        $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d2;
-        $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d3;
+        if ($total1_modal_inti > 0) {
+            $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total1_modal_pelengkap = 0;
+        }
 
-        if ($kpmm->modal_pelengkap_utama > 0) {
+        if ($total2_modal_inti > 0) {
+            $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total2_modal_pelengkap = 0;
+        }
+
+        if ($total3_modal_inti > 0) {
+            $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama;
+        }else{
+            $total3_modal_pelengkap = 0;
+        }
+        // $total1_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d1;
+        // $total2_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d2;
+        // $total3_modal_pelengkap = $kpmm->modal_pelengkap_utama + $kpmm->modal_pelengkap_d3;
+
+        if ($kpmm->modal_pelengkap_utama >= 0) {
             $total_modal_utama = $kpmm->modal_inti_utama + $kpmm->modal_pelengkap_utama;    
         }else{
             $total_modal_utama = 0;
         }
 
-        if ($total1_modal_pelengkap > 0) {
+        if ($total1_modal_pelengkap >= 0) {
             $total_modal_1 = $total1_modal_inti + $total1_modal_pelengkap;    
         }else{
             $total_modal_1 = 0;
         }
 
-        if ($total2_modal_pelengkap > 0) {
+        if ($total2_modal_pelengkap >= 0) {
             $total_modal_2 = $total2_modal_inti + $total2_modal_pelengkap;    
         }else{
             $total_modal_2 = 0;
         }
 
-        if ($total3_modal_pelengkap > 0) {
+        if ($total3_modal_pelengkap >= 0) {
             $total_modal_3 = $total3_modal_inti + $total3_modal_pelengkap;    
         }else{
             $total_modal_3 = 0;
@@ -1185,9 +1220,9 @@ class NeracaController extends Controller
 
         $pdf = app('dompdf.wrapper');
         $pdf->getDomPDF()->set_option("enable_php", true);
-        $pdf->loadView('neraca.template_cetak',compact('pdf','data','aset','total1_kas','total2_kas','total3_kas','total1_penempatan_bi','total2_penempatan_bi','total3_penempatan_bi','total1_penempatan_lain','total2_penempatan_lain','total3_penempatan_lain','total1_suber','total2_suber','total3_suber','total1_kolektibilitas1','total2_kolektibilitas1','total3_kolektibilitas1','total1_kolektibilitas2','total2_kolektibilitas2','total3_kolektibilitas2','total1_kolektibilitas3','total2_kolektibilitas3','total3_kolektibilitas3','total1_kolektibilitas4','total2_kolektibilitas4','total3_kolektibilitas4','total1_kolektibilitas5','total2_kolektibilitas5','total3_kolektibilitas5','pembiayaan_utama','pembiayaan_d1','pembiayaan_d2','pembiayaan_d3','pembiayaan_k1','pembiayaan_k2','pembiayaan_k3','total1_pembiayaan','total2_pembiayaan','total3_pembiayaan','total1_penyertaan','total2_penyertaan','total3_penyertaan','total1_ckpnp','total2_ckpnp','total3_ckpnp','total1_astet','total2_astet','total3_astet','total1_akumulasi','total2_akumulasi','total3_akumulasi','total1_properti','total2_properti','total3_properti','total1_ayda','total2_ayda','total3_ayda','total1_rekening','total2_rekening','total3_rekening','total1_ckpnl','total2_ckpnl','total3_ckpnl','total1_lain','total2_lain','total3_lain','ckpnl_k1','ckpnl_k2','ckpnl_k3','lain_d1','lain_d2','lain_d3','total_aset','total_aset_d1','total_aset_k1','total_aset1','total_aset_d2','total_aset_k2','total_aset2','total_aset_d3','total_aset_k3','total_aset3','liabilitas','total1_dana','total2_dana','total3_dana','total1_liabilitas_bi','total2_liabilitas_bi','total3_liabilitas_bi','total1_liabilitas_lain','total2_liabilitas_lain','total3_liabilitas_lain','total1_suberl','total2_suberl','total3_suberl','total1_liabilitas_diterima','total2_liabilitas_diterima','total3_liabilitas_diterima','total1_lainl','total2_lainl','total3_lainl','total_liabilitas','total_liabilitas_d1','total_liabilitas_k1','total_liabilitas1','total_liabilitas_d2','total_liabilitas_k2','total_liabilitas2','total_liabilitas_d3','total_liabilitas_k3','total_liabilitas3','equitas','total1_modal_disetor','total2_modal_disetor','total3_modal_disetor','total1_modal_pinjaman','total2_modal_pinjaman','total3_modal_pinjaman','total1_perkiraan','total2_perkiraan','total3_perkiraan','total1_selisih','total2_selisih','total3_selisih','total1_cadangan','total2_cadangan','total3_cadangan','total1_laba_sebelum','total2_laba_sebelum','total3_laba_sebelum','labarugi','total1_pendapatan_penyaluran','total2_pendapatan_penyaluran','total3_pendapatan_penyaluran','total1_pendapatan_ops','total2_pendapatan_ops','total3_pendapatan_ops','total1_beban_ops','total2_beban_ops','total3_beban_ops','total1_beban_nops','total2_beban_nops','total3_beban_nops','total1_pendapatan_nops','total2_pendapatan_nops','total3_pendapatan_nops','total1_pajak_penghasilan','total2_pajak_penghasilan','total3_pajak_penghasilan','total1_bagi_hasil','total2_bagi_hasil','total3_bagi_hasil','beban_ops_d1','beban_ops_d2','beban_ops_d3','total_pendapatan_bagi_utama','total_pendapatan_bagi_1','total_pendapatan_bagi_2','total_pendapatan_bagi_3','total_ops_utama','total_ops_1','total_ops_2','total_ops_3','total_nops_utama','total_nops_1','total_nops_2','total_nops_3','total_tops_utama','total_tops_1','total_tops_2','total_tops_3','total_bersih_utama','total_bersih_1','total_bersih_2','total_bersih_3','laba_berjalan_utama','laba_berjalan_d1','laba_berjalan_d2','laba_berjalan_d3','laba_berjalan_utama','laba_berjalan_d1','laba_berjalan_d2','laba_berjalan_d3','total1_laba_berjalan','total2_laba_berjalan','total3_laba_berjalan','total_equitas','total_equitas1','total_equitas2','total_equitas3','kpmm','total1_modal_pelengkap','total2_modal_pelengkap','total3_modal_pelengkap','total1_modal_inti','total2_modal_inti','total3_modal_inti','modal_inti_d1','modal_inti_d2','modal_inti_d3','total_modal_utama','total_modal_1','total_modal_2','total_modal_3','total_atmr_k1','total_atmr_k2','total_atmr_k3','total1_total_atmr','total2_total_atmr','total3_total_atmr','npf_utama','npf_d1','npf_d2','npf_d3','total1_npf','total2_npf','total3_npf','car_14_1','car_14_2','car_14_3','car_12_1','car_12_2','car_12_3','car_8_1','car_8_2','car_8_3','car_41_1','car_41_2','car_41_3','total_ppap1','total_ppap2','total_ppap3','tambahan_45_1','tambahan_45_2','tambahan_45_3'))->setPaper('a4', 'landscape');
+        $pdf->loadView('neraca.template_cetak',compact('pdf','data','aset','total1_kas','total2_kas','total3_kas','total1_penempatan_bi','total2_penempatan_bi','total3_penempatan_bi','total1_penempatan_lain','total2_penempatan_lain','total3_penempatan_lain','total1_suber','total2_suber','total3_suber','total1_kolektibilitas1','total2_kolektibilitas1','total3_kolektibilitas1','total1_kolektibilitas2','total2_kolektibilitas2','total3_kolektibilitas2','total1_kolektibilitas3','total2_kolektibilitas3','total3_kolektibilitas3','total1_kolektibilitas4','total2_kolektibilitas4','total3_kolektibilitas4','total1_kolektibilitas5','total2_kolektibilitas5','total3_kolektibilitas5','pembiayaan_utama','pembiayaan_d1','pembiayaan_d2','pembiayaan_d3','pembiayaan_k1','pembiayaan_k2','pembiayaan_k3','total1_pembiayaan','total2_pembiayaan','total3_pembiayaan','total1_penyertaan','total2_penyertaan','total3_penyertaan','total1_ckpnp','total2_ckpnp','total3_ckpnp','total1_astet','total2_astet','total3_astet','total1_akumulasi','total2_akumulasi','total3_akumulasi','total1_properti','total2_properti','total3_properti','total1_ayda','total2_ayda','total3_ayda','total1_rekening','total2_rekening','total3_rekening','total1_ckpnl','total2_ckpnl','total3_ckpnl','total1_lain','total2_lain','total3_lain','ckpnl_k1','ckpnl_k2','ckpnl_k3','lain_d1','lain_d2','lain_d3','total_aset','total_aset_d1','total_aset_k1','total_aset1','total_aset_d2','total_aset_k2','total_aset2','total_aset_d3','total_aset_k3','total_aset3','liabilitas','total1_dana','total2_dana','total3_dana','total1_liabilitas_bi','total2_liabilitas_bi','total3_liabilitas_bi','total1_liabilitas_lain','total2_liabilitas_lain','total3_liabilitas_lain','total1_suberl','total2_suberl','total3_suberl','total1_liabilitas_diterima','total2_liabilitas_diterima','total3_liabilitas_diterima','total1_lainl','total2_lainl','total3_lainl','total_liabilitas','total_liabilitas_d1','total_liabilitas_k1','total_liabilitas1','total_liabilitas_d2','total_liabilitas_k2','total_liabilitas2','total_liabilitas_d3','total_liabilitas_k3','total_liabilitas3','equitas','total1_modal_disetor','total2_modal_disetor','total3_modal_disetor','total1_modal_pinjaman','total2_modal_pinjaman','total3_modal_pinjaman','total1_perkiraan','total2_perkiraan','total3_perkiraan','total1_selisih','total2_selisih','total3_selisih','total1_cadangan','total2_cadangan','total3_cadangan','total1_laba_sebelum','total2_laba_sebelum','total3_laba_sebelum','labarugi','total1_pendapatan_penyaluran','total2_pendapatan_penyaluran','total3_pendapatan_penyaluran','total1_pendapatan_ops','total2_pendapatan_ops','total3_pendapatan_ops','total1_beban_ops','total2_beban_ops','total3_beban_ops','total1_beban_nops','total2_beban_nops','total3_beban_nops','total1_pendapatan_nops','total2_pendapatan_nops','total3_pendapatan_nops','total1_pajak_penghasilan','total2_pajak_penghasilan','total3_pajak_penghasilan','total1_bagi_hasil','total2_bagi_hasil','total3_bagi_hasil','beban_ops_d1','beban_ops_d2','beban_ops_d3','total_pendapatan_bagi_utama','total_pendapatan_bagi_1','total_pendapatan_bagi_2','total_pendapatan_bagi_3','total_ops_utama','total_ops_1','total_ops_2','total_ops_3','total_nops_utama','total_nops_1','total_nops_2','total_nops_3','total_tops_utama','total_tops_1','total_tops_2','total_tops_3','total_bersih_utama','total_bersih_1','total_bersih_2','total_bersih_3','laba_berjalan_utama','laba_berjalan_d1','laba_berjalan_d2','laba_berjalan_d3','laba_berjalan_utama','laba_berjalan_d1','laba_berjalan_d2','laba_berjalan_d3','total1_laba_berjalan','total2_laba_berjalan','total3_laba_berjalan','total_equitas','total_equitas1','total_equitas2','total_equitas3','kpmm','total1_modal_pelengkap','total2_modal_pelengkap','total3_modal_pelengkap','total1_modal_inti','total2_modal_inti','total3_modal_inti','modal_inti_d1','modal_inti_d2','modal_inti_d3','total_modal_utama','total_modal_1','total_modal_2','total_modal_3','total_atmr_k1','total_atmr_k2','total_atmr_k3','total1_total_atmr','total2_total_atmr','total3_total_atmr','npf_utama','npf_d1','npf_d2','npf_d3','total1_npf','total2_npf','total3_npf','car_14_1','car_14_2','car_14_3','car_12_1','car_12_2','car_12_3','car_8_1','car_8_2','car_8_3','car_41_1','car_41_2','car_41_3','total_ppap1','total_ppap2','total_ppap3','tambahan_45_1','tambahan_45_2','tambahan_45_3','pembuat'))->setPaper('a4', 'landscape');
                 
-        return $pdf->stream('Hasil Perhitungan.pdf');
+        return $pdf->stream('Simulasi.pdf');
     }
 
     /**

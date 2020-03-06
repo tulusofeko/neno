@@ -79,7 +79,7 @@
         <td align="right">{{ $total_ops_1 != NULL ? "Rp " . number_format($total_ops_1, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
-        <td align="right">{{ $total_ops_2 != NULL ? "Rp " . number_format($total_ops_3, 2, ",", ".") : '-' }}</td>
+        <td align="right">{{ $total_ops_2 != NULL ? "Rp " . number_format($total_ops_2, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
         <td align="right">{{ $total_ops_3 != NULL ? "Rp " . number_format($total_ops_3, 2, ",", ".") : '-' }}</td>
@@ -121,7 +121,7 @@
         <td align="right">{{ $total_nops_1 != NULL ? "Rp " . number_format($total_nops_1, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
-        <td align="right">{{ $total_nops_2 != NULL ? "Rp " . number_format($total_nops_3, 2, ",", ".") : '-' }}</td>
+        <td align="right">{{ $total_nops_2 != NULL ? "Rp " . number_format($total_nops_2, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
         <td align="right">{{ $total_nops_3 != NULL ? "Rp " . number_format($total_nops_3, 2, ",", ".") : '-' }}</td>
@@ -135,7 +135,7 @@
         <td align="right">{{ $total_tops_1 != NULL ? "Rp " . number_format($total_tops_1, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
-        <td align="right">{{ $total_tops_2 != NULL ? "Rp " . number_format($total_tops_3, 2, ",", ".") : '-' }}</td>
+        <td align="right">{{ $total_tops_2 != NULL ? "Rp " . number_format($total_tops_2, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
         <td align="right">{{ $total_tops_3 != NULL ? "Rp " . number_format($total_tops_3, 2, ",", ".") : '-' }}</td>
@@ -163,7 +163,7 @@
         <td align="right">{{ $total_bersih_1 != NULL ? "Rp " . number_format($total_bersih_1, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
-        <td align="right">{{ $total_bersih_2 != NULL ? "Rp " . number_format($total_bersih_3, 2, ",", ".") : '-' }}</td>
+        <td align="right">{{ $total_bersih_2 != NULL ? "Rp " . number_format($total_bersih_2, 2, ",", ".") : '-' }}</td>
         <td align="right"></td>
         <td align="right"></td>
         <td align="right">{{ $total_bersih_3 != NULL ? "Rp " . number_format($total_bersih_3, 2, ",", ".") : '-' }}</td>
