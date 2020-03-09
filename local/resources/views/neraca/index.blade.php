@@ -77,10 +77,16 @@
 
 </div>
 @include('utama.hapus')
+@include('neraca.informasi')
 </section>
 @endsection
 
 @section('js')
+<script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
 <script type="text/javascript">
 // Delete a post pasangan
   $(document).on('click', '.delete-modal', function() {

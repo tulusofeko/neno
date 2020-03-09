@@ -126,7 +126,7 @@ class NominatifController extends Controller
                 if(!empty($import_data_filter && sizeof($import_data_filter))){
                     $export_error_data = $import_data_filter;
                     $datacount = sizeof($export_error_data);
-                    if ($datacount <= 2000 ) {
+                    // if ($datacount <= 2000 ) {
                         $j = 0; $k = 0; $l = 0;
                         for ($i = 0; $i < $datacount; $i++) {
                             $a =0;
@@ -184,13 +184,13 @@ class NominatifController extends Controller
                             return redirect()->back()->with($notification);
                         }
 
-                    }else{
-                        $notification = array(
-                            'message' => 'Maksimal input data adalah 2000 data !',
-                            'alert-type' => 'error',
-                        );
-                        return redirect()->back()->with($notification);
-                    }
+                    // }else{
+                    //     $notification = array(
+                    //         'message' => 'Maksimal input data adalah 2000 data !',
+                    //         'alert-type' => 'error',
+                    //     );
+                    //     return redirect()->back()->with($notification);
+                    // }
                 }else{
                     $notification = array(
                         'message' => 'Header Data Import Excel Tidak Sesuai !',

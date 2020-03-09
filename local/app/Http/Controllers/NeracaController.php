@@ -438,9 +438,14 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
-        // $aset->ckpnp_k1 = round($this->ckpnAsets0());
-        // $aset->ckpnp_k3 = round($this->ckpnAsets1());
-        // $aset->ckpnp_k2 = round($this->ckpnAsets3());
+
+        $nominatif_list = Nominatif::get();
+        $jumlah_nominatif = $nominatif_list->count();
+        if ($jumlah_nominatif != NULL) {
+            $aset->ckpnp_k1 = round($this->ckpnAsets0());
+            $aset->ckpnp_k3 = round($this->ckpnAsets1());
+            $aset->ckpnp_k2 = round($this->ckpnAsets3());
+        }
         $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
@@ -855,9 +860,13 @@ class NeracaController extends Controller
         $total1_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d1 - $aset->penyertaan_k1;
         $total2_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d2 - $aset->penyertaan_k2;
         $total3_penyertaan = $aset->penyertaan_utama + $aset->penyertaan_d3 - $aset->penyertaan_k3;
-        // $aset->ckpnp_k1 = round($this->ckpnAsets0());
-        // $aset->ckpnp_k3 = round($this->ckpnAsets1());
-        // $aset->ckpnp_k2 = round($this->ckpnAsets3());
+        $nominatif_list = Nominatif::get();
+        $jumlah_nominatif = $nominatif_list->count();
+        if ($jumlah_nominatif != NULL) {
+            $aset->ckpnp_k1 = round($this->ckpnAsets0());
+            $aset->ckpnp_k3 = round($this->ckpnAsets1());
+            $aset->ckpnp_k2 = round($this->ckpnAsets3());
+        }
         $total1_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d1 + $aset->ckpnp_k1;
         $total2_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d2 + $aset->ckpnp_k2;
         $total3_ckpnp = $aset->ckpnp_utama - $aset->ckpnp_d3 + $aset->ckpnp_k3;
